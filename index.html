@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body class="overflow-x-hidden" x-data="bodyData">
+    <header :class="headerIsActive && 'active'" x-ref="header"
+        class="py-[2.73vw] mx-[3.9vw] box-border flex justify-between items-center fixed w-[calc(100%_-_7.8vw)] top-0 border-white border-b-[1.5px] z-50 duration-200 md:py-[1.5vw] md:mx-[1.5vw] md:w-[calc(100%_-_3vw)]">
+        <div :class="!menuIsActive && 'hidden'"
+            class="fixed top-0 left-0 px-[1.87vw] pt-[2.2vw] h-full w-[66.67vw] bg-[#414d75] flex flex-col md:w-[33.85vw]">
+            <button @click="menuIsActive = !menuIsActive" class="flex items-center gap-[1vw]">
+                <svg class="w-[3vw] h-[2.6vw] md:w-[1.2vw] md:h-[1vw]" xmlns="http://www.w3.org/2000/svg" width="20"
+                    height="19" fill="none" viewBox="0 0 20 19">
+                    <path stroke="#fff" stroke-width="2"
+                        d="M1.293 17.293 12.607 5.979m2.114-2.114 2.828-2.828m-14.842.256 16.264 16.263" />
+                </svg>
+                <span
+                    class="text-white text-[2.86vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">ЗАКРЫТЬ</span>
+            </button>
+            <nav class="min-h-full">
+                <ul class="flex flex-col gap-[5.2vw] justify-center min-h-full md:gap-[2.8vw]">
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">ЦЕЛИ
+                            СОЗДАНИЯ СИСТЕМЫ
+                            KAIGNER</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">пОЛУЧИТЕ
+                            УСТОЙЧИВЫЕ БИЗНЕС-ПРОЦЕССЫ</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">КАК
+                            ПРОЗОДИТ ПРОЕКТНАЯ РАБОТА</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">БИЗНЕС
+                            СТАНЕТ ПРИВЛЕКАТЕЛЬНЫМ</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">НОВЫЕ
+                            БИЗНЕС-ПРОЦЕССЫ И РЕИНЖЕНИРИНГ</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">ДЛЯ
+                            КОГО</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">КОНТАКТЫ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <button @click="menuIsActive = !menuIsActive" class="flex items-center gap-[1vw]">
+            <svg class="w-[3vw] h-[2.6vw] md:w-[1.2vw] md:h-[1vw]" xmlns="http://www.w3.org/2000/svg" width="23"
+                height="22" fill="none" viewBox="0 0 23 22">
+                <path stroke="#fff" stroke-width="2" d="M0 1h16m3 0h4M0 11h23M0 21h23" />
+            </svg>
+            <span
+                class="text-white text-[2.86vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">меню</span>
+        </button>
+        <a href="#" draggable="false">
+            <img class="w-[28.64vw] h-[3.64vw] md:w-[17.7vw] md:h-[2.29vw]" src="./images/logo.svg" alt="Оцифрум"
+                width="340" height="44" draggable="false" loading="lazy" decoding="async">
+        </a>
+        <a href="#"
+            class="text-white text-[2.1vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">узнайте
+            сейчас</a>
+    </header>
+    <main @scroll.window="onScroll" class="overflow-x-clip">
+        <section class="hero-block relative h-[104vw] bg-center bg-cover flex flex-col justify-between md:h-[42vw]">
+            <span
+                class="absolute text-white text-[2.6vw] font-bold tracking-[-0.1em] z-20 top-[55%] left-[30%] md:top-[65%] md:left-[35%] md:text-[1.35vw]">+15%</span>
+            <span
+                class="absolute text-white text-[2.6vw] font-bold tracking-[-0.1em] z-20 top-[22%] left-[39%] md:top-[32%] md:left-[44%] md:text-[1.35vw]">+35%</span>
+            <span
+                class="absolute text-white text-[2.6vw] font-bold tracking-[-0.1em] z-20 top-[47%] left-[65%] md:top-[44%] md:left-[57%] md:text-[1.35vw]">+120%</span>
+            <span
+                class="absolute text-white text-[2.6vw] font-bold tracking-[-0.1em] z-20 top-[25%] left-[80%] md:top-[40%] md:left-[77%] md:text-[1.35vw]">+70%</span>
+            <span
+                class="inline-flex w-full justify-end pr-[3.9vw] mt-[11vw] text-white text-[2.1vw] md:pr-[1.5vw] md:text-[1.25vw] md:mt-[6.25vw]">Автоматизированное
+                управление</span>
+            <h1
+                class="text-white mb-[19.53vw] text-[4.94vw] text-balance font-semibold uppercase text-center [text-shadow:0_3px_12px_rgba(13,18,37,0.6)] md:mb-[5.7vw] md:text-[2.6vw]">
+                Создаем непрерывную систему бизнес-процессов</h1>
+        </section>
+        <div class="flex items-center w-[97.3vw] mr-0 mt-[2.6vw] ml-auto md:mt-[1vw]">
+            <img class="w-[16.92vw] h-[9.11vw] md:w-[12.6vw] md:h-[6.77vw]" src="./images/ticker.png" alt="ticker"
+                draggable="false" loading="lazy" decoding="async">
+            <div
+                class="py-[0.65vw] ml-[1vw] border-[#6767B8] border-y-[1.5px] w-full overflow-x-clip relative after:content-normal after:absolute after:block after:h-full after:w-[7.81vw] after:top-0 after:left-0 after:bg-gradient-to-r after:from-white after:to-transparent md:py-[0.5vw]">
+                <div class="marquee w-max h-fit flex">
+                    <span class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]">Отчеты по всем
+                        процессам</span>
+                    <span
+                        class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]">Аналитика</span>
+                    <span
+                        class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]">Доп.статусы</span>
+                    <span
+                        class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]">Справочники</span>
+                    <span class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]">Продажи</span>
+                    <span
+                        class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]">Производство</span>
+                    <span class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]">Склад готовой
+                        продукции</span>
+                </div>
+            </div>
+        </div>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[13.02vw] relative md:mt-[1.4vw]">
+            <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] top-0 right-[-10vw] opacity-15">
+            <img src="./images/decor-1.png"
+                class="absolute w-[23.95vw] h-[21.87vw] bottom-[-10vw] left-[-17vw] opacity-15">
+            <h2 class="text-[#3f4b7d] text-[4.68vw] leading-[128%] font-middle uppercase text-center md:text-[2.6vw]">
+                Как думаете, на
+                сколько раскрыт <br class="hidden md:inline"><bdi class="text-[#ee8e15]">потенциал вашего бизнеса?</bdi>
+            </h2>
+            <div
+                class="grid items-center gap-[3.9vw] mt-[3.9vw] md:mt-[3.645vw] md:grid-cols-[1fr_46.875vw] md:gap-[3vw]">
+                <div class="mt-[3.65vw]">
+                    <p class="text-[#3f4b7d] text-[2.34vw] text-center font-medium text-balance md:text-[1.35vw]">По
+                        статистике
+                        <b>средний показатель
+                            47 процентов</b> использовано в настройке бизнес-процессов.
+                    </p>
+                    <p
+                        class="text-[#3f4b7d] text-[2.34vw] text-center font-medium mt-[1.3vw] text-balance md:mt-[3.125vw] md:text-[1.35vw]">
+                        Фактический опыт показывает, что изнутри собственникам и топ управленцам трудно удержать
+                        внимание на всей целостности
+                        картины бизнеса в деталях. Это нормально в современных рыночных условиях в эпоху большого
+                        информационного шума и быстрых
+                        перемен.
+                    </p>
+                </div>
+                <div class="group h-[72vw] md:h-[45vw]">
+                    <div
+                        class="h-full [transform-style:preserve-3d] duration-1000 group-hover:[transform:rotateY(180deg)]">
+                        <div
+                            class="chaos-in-mind-front flex justify-between box-border p-[1.3vw] absolute w-full h-full [backface-visibility:hidden]">
+                            <h3 class="text-white text-[3.125vw] md:text-[2vw] font-semibold tracking-[-0.1em]">Хаос
+                                прячется в мышлении
+                            </h3>
+                            <svg class="w-[1.7vw] h-[2.4vw]" width="33" height="46" viewBox="0 0 33 46" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.06131 28.3054C4.36387 29.4688 3.51416 31.3945 3.51416 34.0806C3.51416 38.1108 8.45261 44.9998 12.9067 44.9998H24.3023C28.6601 44.9998 31.3085 41.1781 31.3085 38.1108V25.1567C31.3085 24.3669 30.9947 23.6094 30.4363 23.0509C29.8778 22.4925 29.1203 22.1787 28.3305 22.1787H28.3206C27.5334 22.1787 26.7785 22.4914 26.2219 23.048C25.6653 23.6046 25.3526 24.3596 25.3526 25.1467"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" />
+                                <path
+                                    d="M7.4657 30.552V10.2621C7.46583 9.87071 7.54316 9.48318 7.69327 9.12172C7.84339 8.76025 8.06333 8.43194 8.3405 8.1556C8.61767 7.87926 8.94664 7.6603 9.30855 7.51128C9.67046 7.36225 10.0582 7.28608 10.4496 7.28712C11.2419 7.28922 12.001 7.6055 12.5604 8.16657C13.1198 8.72764 13.4338 9.48768 13.4335 10.28V25.7346"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" />
+                                <path
+                                    d="M13.4336 25.1558V21.1931C13.4537 20.4127 13.7778 19.671 14.3369 19.1262C14.896 18.5813 15.6458 18.2764 16.4264 18.2764C17.2071 18.2764 17.9569 18.5813 18.516 19.1262C19.0751 19.671 19.3992 20.4127 19.4193 21.1931V25.1558"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M19.3965 24.8644V22.1713C19.3965 21.3815 19.7103 20.6241 20.2688 20.0656C20.8272 19.5071 21.5847 19.1934 22.3745 19.1934C23.1643 19.1934 23.9218 19.5071 24.4802 20.0656C25.0387 20.6241 25.3525 21.3815 25.3525 22.1713V25.1493"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M1.00001 12.3164C1.00001 10.8303 1.24394 9.35866 1.71788 7.98564C2.19181 6.61262 2.88647 5.36506 3.7622 4.3142C4.63792 3.26334 5.67755 2.42974 6.82173 1.86102C7.96592 1.2923 9.19224 0.999579 10.4307 0.999579C11.6692 0.999579 12.8955 1.2923 14.0397 1.86102C15.1839 2.42975 16.2235 3.26334 17.0992 4.3142C17.9749 5.36507 18.6696 6.61262 19.1435 7.98564C19.6175 9.35866 19.8614 10.8303 19.8614 12.3164"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div
+                            class="absolute w-full h-full box-border py-[2vw] px-[2.6vw] md:p-[1.3vw] [backface-visibility:hidden] [transform:rotateY(180deg)] text-[1.69vw] md:text-[0.86vw] text-white tracking-[0.1vw] bg-[#3f4b7d]">
+                            <h4 class="font-semibold">1. Избыток ресурсов.</h4>
+                            <p class="mb-[1vw]">Богатое мышление - получить избыток ресурсов, а затем использовать этот
+                                излишек для ускорения процесса. Ускорить
+                                развитие обмена данными. Ускорить бизнес.</p>
+
+                            <h4 class="font-semibold">2. Импульс.</h4>
+                            <p class="mb-[1vw]">Богатое мышление предполагает тратить свое время, ресурсы и энергию на
+                                работу, которая продолжает окупаться даже после
+                                того, как затрачены усилия. Богатое мышление заключается в том, чтобы заставить маховик
+                                вращаться. Наращивание импульса.
+                                Создание систем, которые продолжают создавать ценность сами по себе.</p>
+
+                            <h4 class="font-semibold">3. Долгосрочное мышление.</h4>
+                            <p class="mb-[1vw]">Богатое мышление готово инвестировать ресурсы, казалось бы, без всякого
+                                вознаграждения сразу. Не все имеет четкий путь к
+                                прибыльности. Речь идет о риске и вознаграждении, по накопленным данным и их
+                                использовании.
+                                Один год успешных продаж, обеспечит, устойчивость компании на 10 -тилетия.</p>
+
+                            <h4 class="font-semibold">4. Нужна команда.</h4>
+                            <p class="mb-[1vw]">Богатое мышление понимает, что оно не может сделать все, и что даже если
+                                бы оно могло, оно создало бы большую ценность,
+                                сосредоточив внимание на своих основных сильных сторонах. Он знает, что правильная
+                                команда больше, чем сумма ее частей.
+                                Работа в команде – ключ к богатству. Покойный Джим Рон говорил: «Вы — среднее
+                                арифметическое пяти человек, с которыми
+                                проводите больше всего времени».</p>
+
+                            <h4 class="font-semibold">5. Жизнь с разумом.</h4>
+                            <p class="mb-[1vw]">Большая часть жизни — это наше собственное предварительное
+                                программирование. Если вы сможете честно и без предвзятости
+                                подойти к тому, где вы сейчас находитесь, вы сможете начать процесс тонкой настройки
+                                своего стабильного непрерывного
+                                успеха.</p>
+                            <b>Обладающий информацией, обладает расширением границ влияния на проходящие процессы.</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[9.11vw] relative md:mt-[5.2vw]">
+            <h2 class="text-[#3f4b7d] text-[4.68vw] leading-[128%] font-middle uppercase text-center md:text-[2.6vw]">
+                Бизнес - это
+                стратегия и тактика
+            </h2>
+            <div
+                class="grid border border-[#3f4b7d] py-[2.6vw] px-[3.9vw] gap-[3.125vw] mt-[2vw] md:py-[1vw] md:px-[2.6vw] md:mt-[0.78vw] md:grid-cols-3">
+                <div class="flex items-center gap-[2.6vw] md:gap-[1vw]">
+                    <img src="./images/buisness-strategy-1.svg" alt="buisness-strategy-1" draggable="false"
+                        decoding="async" loading="lazy" class="w-[10.93vw] h-[10.15vw] md:w-[5.72vw] md:h-[6.25vw]">
+                    <div>
+                        <h3 class="text-[#3f4b7d] text-[2.86vw] md:text-[1.56vw] font-semibold leading-[167%]">Первое
+                        </h3>
+                        <p class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw] font-medium">Сформированная миссия, цели
+                            компании</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-[2.6vw] md:gap-[1vw]">
+                    <img src="./images/buisness-strategy-2.svg" alt="buisness-strategy-1" draggable="false"
+                        decoding="async" loading="lazy" class="w-[10.93vw] h-[10.15vw] md:w-[5.72vw] md:h-[6.25vw]">
+                    <div>
+                        <h3 class="text-[#3f4b7d] text-[2.86vw] md:text-[1.56vw]  font-semibold leading-[167%]">Второе
+                        </h3>
+                        <p class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw] font-medium">Выстроенная система
+                            непрерывных действий
+                            внутри предприятия</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-[2.6vw] md:gap-[1vw]">
+                    <img src="./images/buisness-strategy-3.svg" alt="buisness-strategy-1" draggable="false"
+                        decoding="async" loading="lazy" class="w-[10.93vw] h-[10.15vw] md:w-[5.72vw] md:h-[6.25vw]">
+                    <div>
+                        <h3 class="text-[#3f4b7d] text-[2.86vw] md:text-[1.56vw] font-semibold leading-[167%]">Третье
+                        </h3>
+                        <p class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw] font-medium">Воздействие внешних
+                            изменений рынка,
+                            тенденций, трендов</p>
+                    </div>
+                </div>
+            </div>
+            <div class="py-[2vw] md:py-[0.67vw] bg-gradient-to-t from-[#7382b2] to-[#37446a]">
+                <span
+                    class="text-white text-[2.86vw] md:text-[1.56vw] font-semibold text-center w-full inline-block leading-[1]">Комплексный
+                    подход
+                    настройки всех бизнес-процессов дает х2, х3 роста!</span>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[13.02vw] relative md:mt-[5.2vw]">
+            <img src="./images/decor-1.png" class="absolute w-[23.95vw] h-[21.87vw] top-0 right-[-15vw] opacity-15">
+            <h2
+                class="text-[#3f4b7d] text-[4.68vw] mx-auto text-center leading-[128%] font-middle uppercase flex justify-center items-center gap-[1vw] text-balance w-[73.95vw] before:content-normal before:hidden before:flex-shrink-0 before:bg-[#3f4b7d] after:content-normal after:hidden after:flex-shrink-0 after:bg-[#3f4b7d] before:size-[1.56vw] after:size-[1.56vw] sm:after:block sm:before:block md:text-[2.6vw] md:before:size-[0.625vw] md:after:size-[0.625vw] md:text-left md:w-full">
+                Основатель компании
+                ОЦИФРУМ</h2>
+            <div
+                class="flex flex-col-reverse items-center gap-[3.9vw] mt-[3.9vw] md:gap-[3.64vw] md:mt-[2.6vw] md:grid md:grid-cols-2">
+                <div>
+                    <picture>
+                        <source srcset="./images/company-onwer.avif" type="image/avif">
+                        <source srcset="./images/company-onwer.webp" type="image/webp">
+                        <img src="./images/company-onwer.jpg" width="685" height="486"
+                            class="w-full aspect-[685/486]  rounded-[5px] bg-[url('./images/company-onwer-low.jpeg')]"
+                            alt="Основатель компании ОЦИФРУМ" draggable="false" decoding="async" loading="lazy">
+                    </picture>
+                    <p class="text-[#3f4b7d] text-[2.86vw] md:text-[1.56vw] font-medium mt-[2.6vw] md:mt-[1.56vw]">В
+                        проведении
+                        реинжиниринга ВАЖНО
+                        обращать
+                        внимание
+                        на каждый модуль и выстроенные с ним взаимосвязи.</p>
+                    <p class="text-[#3f4b7d] text-[2.34vw] mt-[1.3vw] md:text-[1.25vw] md:mt-[1vw]">
+                        Бизнес организм, это передвижение по алгоритмам в системе, информации, обмена данными,
+                        использование ресурсов,
+                        взаимодействие людей.
+                    </p>
+                </div>
+                <div>
+                    <cite
+                        class="block text-[#ee8e15] text-[2.86vw] md:text-[1.56vw] relative before:content-['-'] before:font-semibold before:absolute before:left-[-1vw]">
+                        «Бизнес процессы должны работать в системе, в поставленной тактике и стремится к целям»
+                    </cite>
+                    <p class="text-[#3f4b7d] mt-[2.6vw] text-[2.86vw]  md:text-[1.25vw] md:mt-[0.78vw]">
+                        Бизнес организм, это передвижение по алгоритмам в системе, информации, обмена данными,
+                        использование ресурсов,
+                        взаимодействие людей.
+                    </p>
+                    <img class="w-full mt-[4.68vw]" src="./images/company-owner-scheme.png"
+                        alt="Бизнес процессы должны работать в системе, в поставленной тактике и стремится к целям"
+                        width="844" height="340" draggable="false" decoding="async" loading="lazy">
+                </div>
+            </div>
+            <div
+                class="flex justify-center mt-[3.9vw] md:mt-[2.1vw] py-[2vw] md:py-[0.78vw] border-y-[1.5px] border-[#3f4b7d]">
+                <span class="text-[2.86vw] text-center md:text-left md:text-[1.25vw] text-[#ee8e15] font-medium">
+                    <bdi class="uppercase text-[#3f4b7d]">ЦЕЛЬ:</bdi>
+                    Создать функциональную безопасность от неприемлемого риска в результат достижения и развития
+                    совершенствования
+                </span>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[13.02vw] relative md:mt-[5.2vw]">
+            <img src="./images/decor-1.png"
+                class="absolute w-[27.1vw] h-[25vw] bottom-[-10vw] right-[-10vw] opacity-15">
+            <h2
+                class="text-[#3f4b7d] text-center w-[72.52vw] mx-auto md:w-full text-[4.68vw] leading-[128%] font-middle uppercase flex justify-center items-center gap-[1vw] before:content-normal before:flex-shrink-0 before:bg-[#3f4b7d] after:content-normal after:flex-shrink-0 after:bg-[#3f4b7d] after:hidden before:hidden  before:size-[1.56vw] after:size-[1.56vw] sm:after:block sm:before:block md:text-[2.6vw] md:before:size-[0.625vw] md:after:size-[0.625vw] md:text-left">
+                СОВРЕМЕННЫЙ ФОРМАТ УПРАВЛЕНИЯ</h2>
+            <span
+                class="text-[#3f4b7d] text-balance text-[2.86vw] md:text-[1.45vw] text-center w-full inline-block font-medium mt-[2.6vw] md:mt-0">Открывает
+                собственникам и ТОП
+                менеджерам
+                прозрачность
+                в процессах и перспективы улучшений</span>
+            <div class="grid items-center gap-[3.9vw] mt-[6.51vw] md:gap-[3.64vw] md:mt-[2.6vw] md:grid-cols-2">
+                <ul>
+                    <li
+                        class="list-none w-full border-[#3f4b7d] border-b-[1px] py-[2vw] md:py-[0.78vw] inline-flex gap-[2vw] md:gap-[0.78vw] box-border before:content-normal before:block before:size-[2vw] md:before:size-[0.625vw] before:flex-shrink-0 before:mt-[0.67vw] md:before:mt-[0.52vw] before:bg-[#ee8e15]">
+                        <span class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw]">
+                            <b class="font-medium">Узкие места,</b> указывая
+                            на неправильно сформированные связки в едином целом процессе.
+                        </span>
+                    </li>
+                    <li
+                        class="list-none w-full border-[#3f4b7d] border-b-[1px] py-[2vw] md:py-[0.78vw]  inline-flex gap-[2vw] md:gap-[0.78vw] box-border before:content-normal before:block before:size-[2vw] md:before:size-[0.625vw] before:flex-shrink-0 before:mt-[0.67vw] md:before:mt-[0.52vw] before:bg-[#ee8e15]">
+                        <span class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw]">
+                            <b class="font-medium">Не рационально</b> заниженную активность ресурсов.
+                        </span>
+                    </li>
+                    <li
+                        class="list-none w-full border-[#3f4b7d] border-b-[1px] py-[2vw] md:py-[0.78vw]  inline-flex gap-[2vw] md:gap-[0.78vw] box-border before:content-normal before:block before:size-[2vw] md:before:size-[0.625vw] before:flex-shrink-0 before:mt-[0.67vw] md:before:mt-[0.52vw] before:bg-[#ee8e15]">
+                        <span class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw]">
+                            <b class="font-medium">Протечки в финансовом потоке,</b> и точечные решения по регулированию
+                            изменений.
+                        </span>
+                    </li>
+                    <li
+                        class="list-none w-full border-[#3f4b7d] border-b-[1px] py-[2vw] md:py-[0.78vw] inline-flex gap-[2vw] md:gap-[0.78vw] box-border before:content-normal before:block before:size-[2vw] md:before:size-[0.625vw] before:flex-shrink-0 before:mt-[0.67vw] md:before:mt-[0.52vw] before:bg-[#ee8e15]">
+                        <span class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw]">
+                            <b class="font-medium">Поднимется уровень ответственности</b> в коллективе, результат
+                            каждого сотрудника ложится в общую ценность предприятия.
+                        </span>
+                    </li>
+                    <li
+                        class="list-none w-full border-[#3f4b7d] border-b-[1px] py-[2vw] md:py-[0.78vw]  inline-flex gap-[2vw] md:gap-[0.78vw] box-border before:content-normal before:block before:size-[2vw] md:before:size-[0.625vw] before:flex-shrink-0 before:mt-[0.67vw] md:before:mt-[0.52vw] before:bg-[#ee8e15]">
+                        <span class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw]">
+                            <b class="font-medium">Вырабатывается</b> дисциплина
+                        </span>
+                    </li>
+                    <li
+                        class="list-none w-full border-[#3f4b7d] border-b-[1px] py-[2vw] md:py-[0.78vw] inline-flex gap-[2vw] md:gap-[0.78vw] box-border before:content-normal before:block before:size-[2vw] md:before:size-[0.625vw] before:flex-shrink-0 before:mt-[0.67vw] md:before:mt-[0.52vw] before:bg-[#ee8e15]">
+                        <span class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw]">
+                            <b class="font-medium">Контроль</b> проходит по фактическими данными.
+                        </span>
+                    </li>
+                </ul>
+                <picture>
+                    <source srcset="./images/modern-control.avif" type="image/avif">
+                    <source srcset="./images/modern-control.webp" type="image/webp">
+                    <img class="w-full rounded-[5px]" src="./images/modern-control.jpeg"
+                        alt="СОВРЕМЕННЫЙ ФОРМАТ УПРАВЛЕНИЯ" width="930" height="480" draggable="false" decoding="async"
+                        loading="lazy">
+                </picture>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[13.02vw] relative md:mt-[5.2vw]">
+            <h2
+                class="text-[#3f4b7d] text-[4.68vw] leading-[128%] font-middle uppercase flex justify-center items-center gap-[1vw] before:content-normal before:bg-[#3f4b7d] after:content-normal after:bg-[#3f4b7d] after:hidden before:hidden  before:size-[1.56vw] after:size-[1.56vw] sm:after:block sm:before:block md:text-[2.6vw] md:before:size-[0.625vw] md:after:size-[0.625vw]">
+                РАЗРАБОТАНО РЕШЕНИЕ</h2>
+            <div class="flex justify-between items-center mt-[2.6vw] md:mt-[1.56vw]">
+                <div class="flex items-center gap-[1vw]">
+                    <img src="./images/ticker.png" width="242" height="130" alt="фигня 1" draggable="false"
+                        loading="lazy" decoding="async" class="w-[16.92vw] h-[9.11vw] md:w-[12.6vw] md:h-[6.8vw]">
+                    <img src="./images/kaigner.png" width="420" height="160" alt="фигня 2" draggable="false"
+                        loading="lazy" decoding="async" class="w-[29.68vw] h-[11vw] md:w-[21.87vw] md:h-[8.33vw]">
+                </div>
+                <p
+                    class="text-[#3f4b7d] text-[1.82vw] md:text-[1.3vw] text-balance font-medium tracking-[0.27vw] text-right w-[40.88vw] md:w-[25.67vw] md:text-center">
+                    Целеустремлённый цифровой помощник <b class="font-semibold">для собственников производственных
+                        предприятий</b>
+                </p>
+            </div>
+            <div class="grid gap-[1.04vw] md:gap-[1vw] mt-[3.9vw] md:mt-[1.56vw] sm:grid-cols-2 md:grid-cols-4 ">
+                <div
+                    class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]">
+                    Исключает зависимость ошибок от разных отделов
+                </div>
+                <div
+                    class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]">
+                    Совершенствование процессов «Точно Вовремя»
+                </div>
+                <div
+                    class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]">
+                    Вывести в видимость все финансовые передвижения
+                </div>
+                <div
+                    class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]">
+                    Настройка складов, оборот ресурсов, выход готовой продукции
+                </div>
+                <div
+                    class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]">
+                    Активация знаменателей продажи и маркетинг GO
+                </div>
+                <div
+                    class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]">
+                    Вывод управления в онлайн, сохраняя безопасность
+                </div>
+                <div
+                    class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d] sm:col-start-1 sm:col-end-3 md:col-start-3 md:col-end-5">
+                    Создание устойчивых регламентов и повышение производительности сотрудников
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <a class="group inline-flex items-center gap-[0.26vw] mt-[2.6vw] md:mt-[1vw] text-[#ffa636] text-[2.1vw] md:text-[0.83vw] font-semibold uppercase border-b border-[#FFA636] pb-[0.15vw]"
+                    href="#">перейти к целям<svg
+                        class="duration-200 size-[1.3vw] md:size-[1vw] group-hover:translate-x-[0.2vw]"
+                        xmlns="http://www.w3.org/2000/svg" width="11" height="8" fill="none" viewBox="0 0 11 8">
+                        <path fill="#FFA636"
+                            d="M10.354 4.354a.5.5 0 0 0 0-.708L7.172.464a.5.5 0 1 0-.708.708L9.293 4 6.464 6.828a.5.5 0 1 0 .708.708l3.182-3.182ZM0 4.5h10v-1H0v1Z" />
+                    </svg></a>
+            </div>
+        </section>
+        <iframe loading="lazy" class="w-full h-[21.92vw] md:h-[54.73vw]" width="560" height="315"
+            src="https://www.youtube.com/embed/7xStxJVOJhI?si=eSBk3hrlG5K69uOk?rel=0&autoplay=1&mute=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[13.02vw] relative md:mt-[5.2vw]">
+            <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] top-[-2vw] right-[-15vw] opacity-15">
+            <h2 class="text-[#3f4b7d] text-[4.68vw] leading-[128%] font-middle uppercase text-center md:text-[2.6vw]">
+                Системный бизнес:<br>
+                создаем динамичное будущее
+            </h2>
+            <p
+                class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw] text-center font-medium mx-auto mt-[2.6vw] md:mt-[1vw] w-[64.32vw] md:w-[30.78vw]">
+                Готовим вас
+                к
+                динамичному
+                будущему. Мы
+                следим за удивительными изменениями в мире мобильных решений и новыми
+                достижениями в технологиях бизнеса, а также тем, как люди взаимодействуют в компаниях.</p>
+            <div
+                class="mx-auto relative w-full md:w-[54.68vw] h-[13.02vw] md:h-[7.81vw] mt-[3.9vw] md:mt-[2.1vw] overflow-clip">
+                <picture>
+                    <source srcset="./images/system-buisness.avif" type="image/avif">
+                    <source srcset="./images/system-buisness.webp" type="image/webp">
+                    <img src="./images/system-buisness.jpeg" alt="Системный бизнес" draggable="false" loading="lazy"
+                        decoding="async" width="1280" height="635"
+                        class="absolute min-w-[66.67vw] w-[66.67vw ] min-h-[33.07vw] bottom-[-13vw] md:left-[-3.91vw] bg-[url(./images/system-buisness-low.jpeg)]">
+                </picture>
+                <div class="absolute w-full h-full left-0 top-0 bg-[rgba(63,75,125,0.5)]">
+                </div>
+            </div>
+            <p
+                class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw] text-center text-balance font-medium mx-auto mt-[2.6vw] md:mt-[1.56vw] w-[78.38vw] md:w-[54.68vw]">
+                <b class="font-semibold">Внедрение аналитики данных</b> — это дисциплина, которая позволяет организации
+                извлекать значимую информацию из своих данных
+                “в мгновение ока”. Сюда входит, сбор всей информации, фиксация действий, организация и хранение данных
+                за все периоды, а
+                также инструменты и методы, используемые для выполнения этих задач.
+            </p>
+            <div
+                class="flex justify-between items-center flex-col gap-[2vw] md:gap-0 mt-[3.9vw] md:mt-[5.2vw] md:flex-row">
+                <span
+                    class="text-[#3f4b7d] text-[2.86vw] md:text-[1.35vw] font-medium uppercase inline-flex items-center gap-[0.78vw]">
+                    <svg class="w-[1.82vw] md:w-[1.14vw] h-[2.34vw] md:h-[1.35vw]" width="22" height="26"
+                        viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 3L20 12M11 3L2 12M11 3V26" stroke="#EE8E15" stroke-width="5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Настраиваем контроль
+                </span>
+                <span
+                    class="text-[#3f4b7d] text-[2.86vw] md:text-[1.35vw] font-medium uppercase inline-flex items-center gap-[0.78vw]">
+                    <svg class="w-[1.82vw] md:w-[1.14vw] h-[2.34vw] md:h-[1.35vw]" width="22" height="26"
+                        viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 3L20 12M11 3L2 12M11 3V26" stroke="#EE8E15" stroke-width="5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Активируем каждый ресурс
+                </span>
+                <span
+                    class="text-[#3f4b7d] text-[2.86vw] md:text-[1.35vw] font-medium uppercase inline-flex items-center gap-[0.78vw]">
+                    <svg class="w-[1.82vw] md:w-[1.14vw] h-[2.34vw] md:h-[1.35vw]" width="22" height="26"
+                        viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 3L20 12M11 3L2 12M11 3V26" stroke="#EE8E15" stroke-width="5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Поднимаем показатели рентабельности
+                </span>
+            </div>
+        </section>
+        <section
+            class="relative mt-[13.02vw] md:mt-[2.23vw] min-h-[120vw] md:min-h-[29.8vw] border-y-[2px] border-[#3f4b7d] md:border-none box-border bg-gradient-to-t from-[#9da2bf] to-[#d0d2df] md:bg-transparent md:bg-[url(./images/program-development.png)] bg-cover bg-no-repeat">
+            <a class="absolute right-[4vw] bottom-[-4.5vw] md:right-[5.5vw] md:bottom-auto md:top-0 group inline-flex items-center gap-[0.26vw] text-[#ffa636] text-[2.1vw] md:text-[0.83vw] font-semibold uppercase border-b border-[#FFA636] pb-[0.15vw]"
+                href="#">перейти к целям<svg
+                    class="duration-200 size-[1.3vw] md:size-[1vw] group-hover:translate-x-[0.2vw]"
+                    xmlns="http://www.w3.org/2000/svg" width="11" height="8" fill="none" viewBox="0 0 11 8">
+                    <path fill="#FFA636"
+                        d="M10.354 4.354a.5.5 0 0 0 0-.708L7.172.464a.5.5 0 1 0-.708.708L9.293 4 6.464 6.828a.5.5 0 1 0 .708.708l3.182-3.182ZM0 4.5h10v-1H0v1Z">
+                    </path>
+                </svg></a>
+            <div class="w-[93.48vw] md:w-[88.54vw] mx-auto relative pt-[3.9vw] md:pt-[2.1vw]">
+                <h2 class="text-[#3f4b7d] text-[4.68vw] leading-[128%] font-middle uppercase md:text-[2.6vw]">
+                    Как мы разрабатываем программы
+                </h2>
+                <div class="flex justify-between mt-[3.25vw] md:mt-[1.56vw] gap-[6.51vw] md:gap-0 flex-col md:flex-row">
+                    <div class="w-full md:w-[36.45vw]">
+                        <div
+                            class="relative overflow-clip rounded-[5px] after:content-normal after:block after:top-0 after:left-0 after:absolute after:w-full after:h-full after:bg-[rgb(63_75_125_/_0.5)]">
+                            <picture>
+                                <source srcset="./images/program-development-1.avif" type="image/avif">
+                                <source srcset="./images/program-development-1.webp" type="image/webp">
+                                <img class="w-full md:w-[36.45vw] h-[28.64vw] md:h-[11.4vw] object-cover object-top bg-[url(./images/program-development-1-low.jpeg)]"
+                                    src="./images/program-development-1.jpg" alt="Как мы разрабатываем программы 1"
+                                    width="700" height="220" draggable="false" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <p class="text-white text-[2.34vw] md:text-[1vw] font-medium mt-[2.6vw] md:mt-[1vw]">В
+                            разработке IT
+                            продуктов, используем
+                            современные
+                            методики, метрики. Успех устойчивой системы - <b class="font-bold">в связях между
+                                элементами, в достижении поставленных целей.</b></p>
+                    </div>
+                    <div class="w-full md:w-[45.31vw]">
+                        <div
+                            class="relative overflow-clip rounded-[5px] after:content-normal after:block after:top-0 after:left-0 after:absolute after:w-full after:h-full after:bg-[rgb(63_75_125_/_0.5)]">
+                            <picture>
+                                <source srcset="./images/program-development-2.avif" type="image/avif">
+                                <source srcset="./images/program-development-2.webp" type="image/webp">
+                                <img class="w-full md:w-[45.31vw] h-[28.64vw] md:h-[11.4vw] object-cover object-center bg-[url(./images/program-development-2-low.jpeg)]"
+                                    src="./images/program-development-2.jpg" alt="Как мы разрабатываем программы 2"
+                                    width="870" height="220" draggable="false" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <p class="text-white text-[2.34vw] md:text-[1vw] font-medium mt-[2.6vw] md:mt-[1vw]">
+                            Функционал системы, объединяет все бизнес-процессы, что обеспечивает баланс предприятия по
+                            разным показателям.
+                            Реагирование в моменте на изменения и отклонения <b class="font-bold">экономит массу времени
+                                и финансов.</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[13.02vw] relative md:mt-[5.2vw]">
+            <h2
+                class="text-[#3f4b7d] text-[4.16vw] md:text-[2.1vw] leading-[128%] font-middle uppercase text-balance text-center">
+                <b class="font-semibold">Желаете обсудить возможности</b> с нашим экспертом по цифровой трансформации?
+            </h2>
+            <p
+                class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw] text-center font-medium md:w-[47.55vw] mx-auto mt-[1.3vw] md:mt-[1vw]">
+                Представьте себе интеллектуальное производство, которое действительно
+                увеличивает производительность и эффективность бизнеса, минимизируя
+                риски и сокращая время простоев.
+            </p>
+            <a href="#" target="_blank"
+                class="block w-fit box-border mx-auto mt-[3.9vw] md:mt-[2.34vw] py-[2.6vw] md:py-[1vw] px-[4.55vw] md:px-[1.82vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] rounded-[3px] text-white text-[2.34vw] md:text-[1vw] uppercase font-semibold hover:bg-gradient-to-b">ОТКРОЙТЕ
+                НОВЫЕ ПРОЦЕССЫ</a>
+        </section>
+    </main>
+    <footer class="bg-[#414d75] py-[6.51vw] md:py-[1.56vw] mt-[15.625vw] md:mt-[5.2vw] relative overflow-hidden">
+        <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] bottom-[-12.5vw] right-[-10vw] opacity-15">
+        <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] bottom-[-12.5vw] left-[-15vw] opacity-15">
+        <div class="flex justify-between w-[93.48vw] md:w-[88.54vw] mx-auto">
+            <div class="flex flex-col justify-between">
+                <div class="flex flex-col gap-[0.5vw]">
+                    <img src="images/logo.svg" alt="Оцифрум" class="w-[36.71vw] md:w-[17.7vw] h-[4.68vw] md:h-[2.29vw]"
+                        draggable="false" loading="lazy" decoding="async" width="340" height="44">
+                    <p class="text-white text-[1.82vw] md:text-[0.83vw] w-[36.71vw] md:w-[17.7vw] mt-[1.3vw] md:mt-0">
+                        Эксперты, создающие непрерывные бизнес - процессы в современной системе KAIGNER
+                    </p>
+                </div>
+            </div>
+            <div class="hidden md:grid grid-rows-5 grid-flow-col gap-y-[0.5vw] gap-x-[2.5vw]">
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Цели создания
+                    системы KAIGNER</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Получите устойчивые
+                    бизнес-процессы</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Как проходит
+                    проектная работа</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Бизнес станет
+                    привлекательнымг</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Новые
+                    бизнес-процессы и реинжениринг</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Для кого</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Контакты</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Политика
+                    конфиденциальности</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Связаться с
+                    нами</a>
+            </div>
+            <div>
+                <a href="#"
+                    class="block bg-white text-[2.34vw] md:text-[1vw] rounded-[3px] box-border py-[2.6vw] md:py-[1vw] px-[3.9vw] md:px-[1.25vw] duration-200 hover:bg-[hsl(0,0%,70%)]">УЗНАЙТЕ
+                    СЕЙЧАС</a>
+                <a href="tel:+79129999999"
+                    class="inline-block w-full text-white text-right text-[2.6vw] md:text-[0.94vw] font-medium duration-200 mt-[2.6vw] md:mt-[1.56vw] hover:text-[hsl(0,0%,70%)]">
+                    8 (912) 999 99 99
+                </a>
+            </div>
+        </div>
+        <div
+            class="flex justify-between items-center md:items-end flex-col-reverse md:flex-row w-[93.48vw] md:w-[88.54vw] mx-auto mt-[7.1vw]">
+            <p
+                class="text-white text-[2.1vw] md:text-[0.83vw] w-[93.48vw] md:w-fit text-right md:text-left mt-[6.51vw] md:mt-0">
+                2024г. Все права защищены<br>
+                Информация на сайте не является офертой
+            </p>
+            <div class="grid md:hidden gap-y-[2vw] gap-x-[2.5vw] mt-[13.02vw]">
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Цели
+                    создания
+                    системы KAIGNER</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Получите
+                    устойчивые
+                    бизнес-процессы</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Как
+                    проходит
+                    проектная работа</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Бизнес
+                    станет
+                    привлекательнымг</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Новые
+                    бизнес-процессы и реинжениринг</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Для
+                    кого</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Контакты</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Политика
+                    конфиденциальности</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Связаться с
+                    нами</a>
+            </div>
+            <div class="flex justify-end md:justify-normal gap-[2vw] md:gap-[0.78vw] w-[93.48vw] md:w-fit">
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/instagram.svg" class="size-[4.03vw] md:size-[1.56vw]" alt="instagram"
+                        draggable="false" loading="lazy" decoding="async">
+                </a>
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/whatsapp.svg" class="size-[4.03vw] md:size-[1.56vw]" alt="whatsapp"
+                        draggable="false" loading="lazy" decoding="async">
+                </a>
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/telegram.svg" class="size-[4.03vw] md:size-[1.56vw]" width="30" height="30"
+                        alt="telegram" draggable="false" loading="lazy" decoding="async">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

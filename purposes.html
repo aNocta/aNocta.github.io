@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body class="overflow-x-hidden" x-data="bodyData">
+    <header :class="headerIsActive && 'active'" x-ref="header"
+        class="py-[2.73vw] px-[3.9vw] box-border flex justify-between items-center fixed top-0 bg-[rgb(63_75_125_/_0.4)]  z-50 duration-200 md:py-[1.5vw] md:px-[1.5vw] w-full">
+        <div :class="!menuIsActive && 'hidden'"
+            class="fixed top-0 left-0 px-[1.87vw] pt-[2.2vw] h-full w-[66.67vw] bg-[#414d75] flex flex-col md:w-[33.85vw]">
+            <button @click="menuIsActive = !menuIsActive" class="flex items-center gap-[1vw]">
+                <svg class="w-[3vw] h-[2.6vw] md:w-[1.2vw] md:h-[1vw]" xmlns="http://www.w3.org/2000/svg" width="20"
+                    height="19" fill="none" viewBox="0 0 20 19">
+                    <path stroke="#fff" stroke-width="2"
+                        d="M1.293 17.293 12.607 5.979m2.114-2.114 2.828-2.828m-14.842.256 16.264 16.263" />
+                </svg>
+                <span
+                    class="text-white text-[2.86vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">ЗАКРЫТЬ</span>
+            </button>
+            <nav class="min-h-full">
+                <ul class="flex flex-col gap-[5.2vw] justify-center min-h-full md:gap-[2.8vw]">
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">ЦЕЛИ
+                            СОЗДАНИЯ СИСТЕМЫ
+                            KAIGNER</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">пОЛУЧИТЕ
+                            УСТОЙЧИВЫЕ БИЗНЕС-ПРОЦЕССЫ</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">КАК
+                            ПРОЗОДИТ ПРОЕКТНАЯ РАБОТА</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">БИЗНЕС
+                            СТАНЕТ ПРИВЛЕКАТЕЛЬНЫМ</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">НОВЫЕ
+                            БИЗНЕС-ПРОЦЕССЫ И РЕИНЖЕНИРИНГ</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">ДЛЯ
+                            КОГО</a></li>
+                    <li class="text-end"><a class="text-white text-[2.1vw] font-semibold uppercase md:text-[0.93vw]"
+                            href="#">КОНТАКТЫ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <button @click="menuIsActive = !menuIsActive" class="flex items-center gap-[1vw]">
+            <svg class="w-[3vw] h-[2.6vw] md:w-[1.2vw] md:h-[1vw]" xmlns="http://www.w3.org/2000/svg" width="23"
+                height="22" fill="none" viewBox="0 0 23 22">
+                <path stroke="#fff" stroke-width="2" d="M0 1h16m3 0h4M0 11h23M0 21h23" />
+            </svg>
+            <span
+                class="text-white text-[2.86vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">меню</span>
+        </button>
+        <a href="#" draggable="false">
+            <img class="w-[28.64vw] h-[3.64vw] md:w-[17.7vw] md:h-[2.29vw]" src="./images/logo.svg" alt="Оцифрум"
+                width="340" height="44" draggable="false" loading="lazy" decoding="async">
+        </a>
+        <a href="#"
+            class="text-white text-[2.1vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">узнайте
+            сейчас</a>
+    </header>
+    <main @scroll.window="onScroll" class="overflow-x-clip">
+        <section
+            class="purposes-hero bg-cover bg-center flex flex-col justify-end items-center py-[10.41vw] md:py-[6.25vw] md:items-start md:px-[1.56vw] h-[100dvh] md:h-[41.66vw] relative before:content-normal before:absolute before:block before:w-full before:h-full before:top-0 before:left-0 before:bg-gradient-to-bl before:from-[rgb(63_75_125_/_0.2)] before:to-[#3f4b7d] before:to-[83.65%]">
+            <h1
+                class="z-10 text-white text-[6.51vw] md:text-[2.6vw] text-center md:text-left tracking-[-0.1em] font-semibold leading-[100%]">
+                Выход на новый уровень</h1>
+            <p
+                class="text-center md:text-left mt-[0.65vw] md:mt-[0.78vw] text-white text-[3.9vw] md:text-[1.56vw] tracking-[-0.1em] z-10 md:w-[51.25vw]">
+                Система KAIGNER -
+                личный помощник
+                собственника, в управлении производственным предприятием</p>
+            <a href="#"
+                class="mt-[3.9vw] md:mt-[2.6vw] z-10 block font-semibold bg-white text-[2.34vw] md:text-[1vw] rounded-[3px] box-border py-[2.6vw] md:py-[1vw] px-[3.9vw] md:px-[1.25vw] duration-200 hover:bg-[hsl(0,0%,70%)]">УЗНАЙТЕ
+                СЕЙЧАС</a>
+        </section>
+        <section class="mt-[7.81vw] md:mt-[2.6vw] w-[92.18vw] md:w-[83.33vw] mx-auto relative">
+            <img src="./images/decor-1.png"
+                class="absolute w-[27.1vw] h-[25vw] top-[-5vw] right-[-20vw] opacity-15 -z-10">
+            <p class="text-[#3f4b7d] text-center font-medium text-[2.86vw] md:text-[1.56vw] md:w-[72.91vw] mx-auto">
+                Цифровой код
+                KAIGNER
+                разрабатывался непосредственно для вывода предприятия на новый автоматизированный уровень
+                управления, совершенствования и развития бизнеса в условиях быстро меняющейся рыночной экономики</p>
+            <div class="grid gap-[1.15vw] md:gap-[2.6vw] md:grid-cols-3 mt-[5.2vw] md:mt-[2.6vw] ">
+                <div
+                    class="bg-[#f3f3f3] rounded-[10px] flex flex-col items-center justify-center gap-[1.3vw] md:gap-[0.78vw] h-[32.55vw] md:h-[12.5vw] px-[3.125vw] py-[3.9vw] md:py-[1vw]">
+                    <img src="./images/purposes-icon-1.svg" alt="Принимать быстрые решения" width="100" height="100"
+                        draggable="false" loading="lazy" decoding="async" class="size-[13.02vw] md:size-[5.2vw]">
+                    <h3 class="text-[#3f4b7d] text-center text-[4.16vw] md:text-[1.56vw] font-semibold text-balance">
+                        Принимать
+                        быстрые решения</h3>
+                </div>
+                <div
+                    class="bg-[#f3f3f3] rounded-[10px] flex flex-col items-center justify-center gap-[1.3vw] md:gap-[0.78vw] h-[32.55vw] md:h-[12.5vw] px-[3.125vw] py-[3.9vw] md:py-[1vw]">
+                    <img src="./images/purposes-icon-2.svg" alt="Принимать быстрые решения" width="100" height="100"
+                        draggable="false" loading="lazy" decoding="async" class="size-[13.02vw] md:size-[5.2vw]">
+                    <h3 class="text-[#3f4b7d] text-center text-[4.16vw] md:text-[1.56vw] font-semibold text-balance">
+                        Использовать рычаги масштабирования</h3>
+                </div>
+                <div
+                    class="bg-[#f3f3f3] rounded-[10px] flex flex-col items-center justify-center gap-[1.3vw] md:gap-[0.78vw] h-[32.55vw] md:h-[12.5vw] px-[3.125vw] py-[3.9vw] md:py-[1vw]">
+                    <img src="./images/purposes-icon-3.svg" alt="Принимать быстрые решения" width="100" height="100"
+                        draggable="false" loading="lazy" decoding="async" class="size-[13.02vw] md:size-[5.2vw]">
+                    <h3 class="text-[#3f4b7d] text-center text-[4.16vw] md:text-[1.56vw] font-semibold text-balance">
+                        Точно и эффективно работать с ресурсами</h3>
+                </div>
+            </div>
+        </section>
+        <iframe loading="lazy" class="w-full h-[42.7vw] mt-[13.02vw] md:mt-[3.38vw]" width="560" height="315"
+            src="https://www.youtube.com/embed/7xStxJVOJhI?si=eSBk3hrlG5K69uOk?rel=0&autoplay=1&mute=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p
+            class="text-[#3f4b7d] tracking-[-0.1em] font-medium text-center mx-auto text-[2.34vw] md:text-[1.56vw] md:w-[60.72vw] mt-[2.6vw] md:mt-[1vw]">
+            Создавались акценты, легкий в использовании функционал, понятный интерфейс для всех пользователей
+            предприятия. В тоже
+            время зашивались, <b class="font-bold">современные метрики контроля, подсчётов, микрофактические настройки в
+                управлении.</b></p>
+        <section class="mt-[19.53vw] md:mt-[7.81vw] w-[92.18vw] md:w-[90vw] mx-auto relative">
+            <img src="./images/decor-1.png"
+                class="absolute w-[27.1vw] h-[25vw] top-[-10vw] left-[-15vw] opacity-15 -z-10">
+            <img src="./images/decor-1.png"
+                class="absolute w-[27.1vw] h-[25vw] top-[25vw] right-[-15vw] opacity-15 -z-10">
+            <img src="./images/decor-1.png"
+                class="absolute w-[27.1vw] h-[25vw] bottom-[10vw] left-[-15vw] opacity-15 -z-10">
+            <h2
+                class="pb-[2vw] md:pb-[0.25vw] text-[#3f4b7d] text-[4.16vw] md:text-[2.1vw] leading-[128%] font-middle uppercase text-balance text-center border-b-[3px] border-[#3f4b7d]">
+                Главные цели - <bdi class="text-[#ee8e15]">интегрированы</bdi> в полном объёме <bdi
+                    class="text-[#ee8e15]">в систему</bdi> KAIGNER
+            </h2>
+            <div class="grid md:grid-cols-3 gap-[6.51vw] md:gap-[2.6vw] mt-[3.9vw] md:mt-[1.56vw]">
+                <article>
+                    <picture>
+                        <source srcset="images/general-purposes-1.avif" type="image/avif">
+                        <source srcset="images/general-purposes-1.webp" type="image/webp">
+                        <img src="images/general-purposes-1.jpg" alt="Создать единую систему." draggable="false"
+                            loading="lazy" decoding="async" width="540" height="300"
+                            class="w-full h-[52.1vw] md:h-[15.625vw] bg-[url(images/general-purposes-1-low.jpeg)] bg-cover">
+                    </picture>
+                    <h3
+                        class="text-[#3f4b7d] text-[4vw] md:text-[1.56vw] mt-[1.3vw] md:mt-[0.5vw] inline-flex items-center gap-[2vw] md:gap-[0.75vw] font-semibold before:ml-[2vw] md:before:ml-[0.75vw] before:content-normal before:block before:size-[1vw] md:before:size-[0.5vw] before:bg-[#3f4b7d] before:rounded-full">
+                        Первая цель</h3>
+                    <h4 class="text-[#3f4b7d] font-bold text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">Создать
+                        единую систему.</h4>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw]">Убрать зависимость, от разных
+                        отдельных существующих crm, erp.</p>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Процесс должен быть единым. Если система не собственника, то и власть смещается из кабинета
+                        собственника. А вот
+                        ответственность всегда остаётся на нём. Рычаги манипуляции, остаются также где-то
+                        замаскированными.</p>
+                </article>
+                <article>
+                    <picture>
+                        <source srcset="images/general-purposes-2.avif" type="image/avif">
+                        <source srcset="images/general-purposes-2.webp" type="image/webp">
+                        <img src="images/general-purposes-2.jpg" alt="Создать единую систему." draggable="false"
+                            loading="lazy" decoding="async" width="540" height="300"
+                            class="w-full h-[52.1vw] md:h-[15.625vw] bg-[url(images/general-purposes-2-low.jpeg)] bg-cover">
+                    </picture>
+                    <h3
+                        class="text-[#3f4b7d] text-[4vw] md:text-[1.56vw] mt-[1.3vw] md:mt-[0.5vw] inline-flex items-center gap-[2vw] md:gap-[0.75vw] font-semibold before:ml-[2vw] md:before:ml-[0.75vw] before:content-normal before:block before:size-[1vw] md:before:size-[0.5vw] before:bg-[#3f4b7d] before:rounded-full">
+                        Вторая цель</h3>
+                    <h4 class="text-[#3f4b7d] font-bold text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Совершенствование процессов.</h4>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Сформировать стратегию непрерывного совершенствования процессов "Точно Вовремя" Разработать и
+                        оцифровать производство в
+                        концепцию автоматизированной последовательности выполнения заказов.</p>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Реализовать карту создания ценности в потоке. Разработать для каждого семейства выпускаемых
+                        продуктов/изделий, мобильные
+                        тех.карты с учётом всех операции, в том числе отк, брак, склад. Увидеть детальную нагрузку на
+                        участки.</p>
+                </article>
+                <article>
+                    <picture>
+                        <source srcset="images/general-purposes-3.avif" type="image/avif">
+                        <source srcset="images/general-purposes-3.webp" type="image/webp">
+                        <img src="images/general-purposes-3.jpg" alt="Создать единую систему." draggable="false"
+                            loading="lazy" decoding="async" width="540" height="300"
+                            class="w-full h-[52.1vw] md:h-[15.625vw] bg-[url(images/general-purposes-3-low.jpeg)] bg-cover">
+                    </picture>
+                    <h3
+                        class="text-[#3f4b7d] text-[4vw] md:text-[1.56vw] mt-[1.3vw] md:mt-[0.5vw] inline-flex items-center gap-[2vw] md:gap-[0.75vw] font-semibold before:ml-[2vw] md:before:ml-[0.75vw] before:content-normal before:block before:size-[1vw] md:before:size-[0.5vw] before:bg-[#3f4b7d] before:rounded-full">
+                        Третья цель</h3>
+                    <h4 class="text-[#3f4b7d] font-bold text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Контроль финансов.</h4>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Все финансовые потоки поднять в ежедневную видимость доходы/расходы/прибыль. Денежный оборот
+                        должен работать регулярно в
+                        общей тактике, придерживаясь миссии компании. Обязателен учёт дивидендов собственника. Чтоб не
+                        уйти в неожиданный
+                        разрыв.</p>
+                </article>
+                <article>
+                    <picture>
+                        <source srcset="images/general-purposes-4.avif" type="image/avif">
+                        <source srcset="images/general-purposes-4.webp" type="image/webp">
+                        <img src="images/general-purposes-4.jpg" alt="Создать единую систему." draggable="false"
+                            loading="lazy" decoding="async" width="540" height="300"
+                            class="w-full h-[52.1vw] md:h-[15.625vw] bg-[url(images/general-purposes-4-low.jpeg)] bg-cover">
+                    </picture>
+                    <h3
+                        class="text-[#3f4b7d] text-[4vw] md:text-[1.56vw] mt-[1.3vw] md:mt-[0.5vw] inline-flex items-center gap-[2vw] md:gap-[0.75vw] font-semibold before:ml-[2vw] md:before:ml-[0.75vw] before:content-normal before:block before:size-[1vw] md:before:size-[0.5vw] before:bg-[#3f4b7d] before:rounded-full">
+                        Четвертая цель</h3>
+                    <h4 class="text-[#3f4b7d] font-bold text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Оборачиваемость по складам.</h4>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        - Настроить экономический целесообразный оборот вход ресурсов - выход продукта.<br>
+                        - Определить и зафиксировать минимальные точки. <br>
+                        - Связки, с производством, и автоматизировать с действиями. <br>
+                        - Определить точки - связки с
+                        отделом продаж, обеспечить
+                        постоянное наличие продукции на складе, без затоваривания, связать с остальными отделами в
+                        реакционной цепочке запуска –
+                        пополнения. <br>
+                        - Исключить утечки - потери.</p>
+                </article>
+                <article>
+                    <picture>
+                        <source srcset="images/general-purposes-5.avif" type="image/avif">
+                        <source srcset="images/general-purposes-5.webp" type="image/webp">
+                        <img src="images/general-purposes-5.jpg" alt="Создать единую систему." draggable="false"
+                            loading="lazy" decoding="async" width="540" height="300"
+                            class="w-full h-[52.1vw] md:h-[15.625vw] bg-[url(images/general-purposes-5-low.jpeg)] bg-cover">
+                    </picture>
+                    <h3
+                        class="text-[#3f4b7d] text-[4vw] md:text-[1.56vw] mt-[1.3vw] md:mt-[0.5vw] inline-flex items-center gap-[2vw] md:gap-[0.75vw] font-semibold before:ml-[2vw] md:before:ml-[0.75vw] before:content-normal before:block before:size-[1vw] md:before:size-[0.5vw] before:bg-[#3f4b7d] before:rounded-full">
+                        Пятая цель</h3>
+                    <h4 class="text-[#3f4b7d] font-bold text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">Продажи
+                        и маркетинг.</h4>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        - Сделать видимой работу отделов, как сотрудника в единственном числе, так и общий знаменатель
+                        по отделу.<br>- Организовать
+                        интерфейс в удобном быстром использовании.<br>- Объединить в общей системе.<br>- Наладить
+                        контроль обслуживания клиентов.<br>-
+                        Увидеть и оценить работу маркетинговых вложении.</p>
+                </article>
+                <article>
+                    <picture>
+                        <source srcset="images/general-purposes-6.avif" type="image/avif">
+                        <source srcset="images/general-purposes-6.webp" type="image/webp">
+                        <img src="images/general-purposes-6.jpg" alt="Создать единую систему." draggable="false"
+                            loading="lazy" decoding="async" width="540" height="300"
+                            class="w-full h-[52.1vw] md:h-[15.625vw] bg-[url(images/general-purposes-6-low.jpeg)] bg-cover">
+                    </picture>
+                    <h3
+                        class="text-[#3f4b7d] text-[4vw] md:text-[1.56vw] mt-[1.3vw] md:mt-[0.5vw] inline-flex items-center gap-[2vw] md:gap-[0.75vw] font-semibold before:ml-[2vw] md:before:ml-[0.75vw] before:content-normal before:block before:size-[1vw] md:before:size-[0.5vw] before:bg-[#3f4b7d] before:rounded-full">
+                        Шестая цель</h3>
+                    <h4 class="text-[#3f4b7d] font-bold text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Надежная безопасность.</h4>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Управление, оцифрованными бизнес процессами онлайн из любой точки.</p>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        - Создать удобные разрешения в настройках доступа, для каждого типа пользователя, что он может
+                        видеть, а что ему не
+                        нужно видеть.<br>- Возможность, в касание закрыть доступ любому пользователю.<br>- Все данные
+                        хранятся, на независимом
+                        серевере. Удобно вести фин. контроль.<br>- Кнопка ликвидация, также предусмотрена на некий
+                        случай.</p>
+                </article>
+                <article>
+                    <picture>
+                        <source srcset="images/general-purposes-7.avif" type="image/avif">
+                        <source srcset="images/general-purposes-7.webp" type="image/webp">
+                        <img src="images/general-purposes-7.jpg" alt="Создать единую систему." draggable="false"
+                            loading="lazy" decoding="async" width="540" height="300"
+                            class="w-full h-[52.1vw] md:h-[15.625vw] bg-[url(images/general-purposes-7-low.jpeg)] bg-cover">
+                    </picture>
+                    <h3
+                        class="text-[#3f4b7d] text-[4vw] md:text-[1.56vw] mt-[1.3vw] md:mt-[0.5vw] inline-flex items-center gap-[2vw] md:gap-[0.75vw] font-semibold before:ml-[2vw] md:before:ml-[0.75vw] before:content-normal before:block before:size-[1vw] md:before:size-[0.5vw] before:bg-[#3f4b7d] before:rounded-full">
+                        Седьмая цель</h3>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw]">Исключить зависимость, от
+                        одного сотрудника. Ускорить адаптацию новых людей в компании.</p>
+                    <p class="text-[#3f4b7d] font-medium text-[2.34vw] md:text-[0.93vw] mt-[1.3vw] md:mt-[0.5vw]">
+                        Оцифрованный бизнес создаёт устойчивые внутренние регламенты для всех сотрудников в единой
+                        системе, в поставленной
+                        тактике "Точно Продуктивно"</p>
+                </article>
+                <div
+                    class="h-[45.57vw] md:h-[26.04vw] md:col-start-2 md:col-end-4 bg-gradient-to-t from-[#7382b2] to-[#37446a] rounded-[5px] flex flex-col justify-center items-center">
+                    <img src="./images/kaigner.png" alt="kaigner" draggable="false" width="480" height="170"
+                        class="w-[40.36vw] h-[17vw] md:w-[25vw] md:h-[8.85vw]">
+                    <h3 class="text-white text-[2.86vw] md:text-[1.14vw] font-semibold">“Ваш цифровой партнер, всегда
+                        двигающий вас к целям.”</h3>
+                    <a href="#"
+                        class="mt-[3.9vw] md:mt-[1.82vw] block bg-white text-[2.34vw] md:text-[1vw] rounded-[3px] box-border py-[2.6vw] md:py-[1vw] px-[3.9vw] md:px-[1.25vw] duration-200 hover:bg-[hsl(0,0%,70%)]">СКАЧАТЬ
+                        ПРЕЗЕНТАЦИЮ</a>
+                </div>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[90vw] mx-auto mt-[13.02vw] relative md:mt-[5.2vw]">
+            <h2
+                class="text-[#3f4b7d] text-[4.16vw] md:text-[2.1vw] leading-[128%] font-middle uppercase text-balance text-center">
+                <b class="font-semibold">Желаете обсудить возможности</b> с нашим экспертом по цифровой трансформации?
+            </h2>
+            <p
+                class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw] text-center font-medium md:w-[47.55vw] mx-auto mt-[1.3vw] md:mt-[1vw]">
+                Представьте себе интеллектуальное производство, которое действительно
+                увеличивает производительность и эффективность бизнеса, минимизируя
+                риски и сокращая время простоев.
+            </p>
+            <a href="#" target="_blank"
+                class="block w-fit box-border mx-auto mt-[3.9vw] md:mt-[2.34vw] py-[2.6vw] md:py-[1vw] px-[4.55vw] md:px-[1.82vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] rounded-[3px] text-white text-[2.34vw] md:text-[1vw] uppercase font-semibold hover:bg-gradient-to-b">ОТКРОЙТЕ
+                НОВЫЕ ПРОЦЕССЫ</a>
+        </section>
+    </main>
+    <footer class="bg-[#414d75] py-[6.51vw] md:py-[1.56vw] mt-[15.625vw] md:mt-[5.2vw] relative overflow-hidden">
+        <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] bottom-[-12.5vw] right-[-10vw] opacity-15">
+        <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] bottom-[-12.5vw] left-[-15vw] opacity-15">
+        <div class="flex justify-between w-[93.48vw] md:w-[88.54vw] mx-auto">
+            <div class="flex flex-col justify-between">
+                <div class="flex flex-col gap-[0.5vw]">
+                    <img src="images/logo.svg" alt="Оцифрум" class="w-[36.71vw] md:w-[17.7vw] h-[4.68vw] md:h-[2.29vw]"
+                        draggable="false" loading="lazy" decoding="async" width="340" height="44">
+                    <p class="text-white text-[1.82vw] md:text-[0.83vw] w-[36.71vw] md:w-[17.7vw] mt-[1.3vw] md:mt-0">
+                        Эксперты, создающие непрерывные бизнес - процессы в современной системе KAIGNER
+                    </p>
+                </div>
+            </div>
+            <div class="hidden md:grid grid-rows-5 grid-flow-col gap-y-[0.5vw] gap-x-[2.5vw]">
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Цели создания
+                    системы KAIGNER</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Получите устойчивые
+                    бизнес-процессы</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Как проходит
+                    проектная работа</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Бизнес станет
+                    привлекательнымг</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Новые
+                    бизнес-процессы и реинжениринг</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Для кого</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Контакты</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Политика
+                    конфиденциальности</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Связаться с
+                    нами</a>
+            </div>
+            <div>
+                <a href="#"
+                    class="block bg-white text-[2.34vw] md:text-[1vw] rounded-[3px] box-border py-[2.6vw] md:py-[1vw] px-[3.9vw] md:px-[1.25vw] duration-200 hover:bg-[hsl(0,0%,70%)]">УЗНАЙТЕ
+                    СЕЙЧАС</a>
+                <a href="tel:+79129999999"
+                    class="inline-block w-full text-white text-right text-[2.6vw] md:text-[0.94vw] font-medium duration-200 mt-[2.6vw] md:mt-[1.56vw] hover:text-[hsl(0,0%,70%)]">
+                    8 (912) 999 99 99
+                </a>
+            </div>
+        </div>
+        <div
+            class="flex justify-between items-center md:items-end flex-col-reverse md:flex-row w-[93.48vw] md:w-[88.54vw] mx-auto mt-[7.1vw]">
+            <p
+                class="text-white text-[2.1vw] md:text-[0.83vw] w-[93.48vw] md:w-fit text-right md:text-left mt-[6.51vw] md:mt-0">
+                2024г. Все права защищены<br>
+                Информация на сайте не является офертой
+            </p>
+            <div class="grid md:hidden gap-y-[2vw] gap-x-[2.5vw] mt-[13.02vw]">
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Цели
+                    создания
+                    системы KAIGNER</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Получите
+                    устойчивые
+                    бизнес-процессы</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Как
+                    проходит
+                    проектная работа</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Бизнес
+                    станет
+                    привлекательнымг</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Новые
+                    бизнес-процессы и реинжениринг</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Для
+                    кого</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Контакты</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Политика
+                    конфиденциальности</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Связаться с
+                    нами</a>
+            </div>
+            <div class="flex justify-end md:justify-normal gap-[2vw] md:gap-[0.78vw] w-[93.48vw] md:w-fit">
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/instagram.svg" class="size-[4.03vw] md:size-[1.56vw]" alt="instagram"
+                        draggable="false" loading="lazy" decoding="async">
+                </a>
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/whatsapp.svg" class="size-[4.03vw] md:size-[1.56vw]" alt="whatsapp"
+                        draggable="false" loading="lazy" decoding="async">
+                </a>
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/telegram.svg" class="size-[4.03vw] md:size-[1.56vw]" width="30" height="30"
+                        alt="telegram" draggable="false" loading="lazy" decoding="async">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
