@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body class="overflow-x-hidden" x-data="bodyData">
+    <header
+        class="active py-[2.73vw] mx-[3.9vw] box-border flex justify-between items-center fixed w-[calc(100%_-_7.8vw)] top-0 border-white border-b-[1.5px] z-50 duration-200 md:py-[1.5vw] md:mx-[1.5vw] md:w-[calc(100%_-_3vw)]">
+        <div id="menu"
+            class="fixed top-0 left-0 px-[1.87vw] pt-[2.2vw] h-full w-[66.67vw] bg-[rgba(65,77,117,0.9)] flex-col md:w-[33.85vw] hidden box-border">
+            <button id="menu-close-toggler" class="flex items-center gap-[1vw]">
+                <svg class="w-[3vw] h-[2.6vw] md:w-[1.2vw] md:h-[1vw]" xmlns="http://www.w3.org/2000/svg" width="20"
+                    height="19" fill="none" viewBox="0 0 20 19">
+                    <path stroke="#fff" stroke-width="2"
+                        d="M1.293 17.293 12.607 5.979m2.114-2.114 2.828-2.828m-14.842.256 16.264 16.263" />
+                </svg>
+                <span
+                    class="text-white text-[2.86vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">ЗАКРЫТЬ</span>
+            </button>
+            <nav class="min-h-full">
+                <ul class="flex flex-col gap-[5.2vw] justify-center min-h-full md:gap-[2.8vw]">
+                    <li class="menu-item text-end"><a
+                            class="text-white underline decoration-1 underline-offset-4  text-[2.1vw] font-semibold uppercase md:text-[0.93vw] duration-[400ms] hover:text-white"
+                            href="#">ЦЕЛИ
+                            СОЗДАНИЯ СИСТЕМЫ
+                            KAIGNER</a></li>
+                    <li class="menu-item text-end"><a
+                            class="text-[#A7A7A7]  text-[2.1vw] font-semibold uppercase md:text-[0.93vw] duration-[400ms] hover:text-white"
+                            href="#">ОЛУЧИТЕ
+                            УСТОЙЧИВЫЕ БИЗНЕС-ПРОЦЕССЫ</a></li>
+                    <li class="menu-item text-end"><a
+                            class="text-[#A7A7A7]  text-[2.1vw] font-semibold uppercase md:text-[0.93vw] duration-[400ms] hover:text-white"
+                            href="#">КАК
+                            ПРОЗОДИТ ПРОЕКТНАЯ РАБОТА</a></li>
+                    <li class="menu-item text-end"><a
+                            class="text-[#A7A7A7]  text-[2.1vw] font-semibold uppercase md:text-[0.93vw] duration-[400ms] hover:text-white"
+                            href="#">БИЗНЕС
+                            СТАНЕТ ПРИВЛЕКАТЕЛЬНЫМ</a></li>
+                    <li class="menu-item text-end"><a
+                            class="text-[#A7A7A7]  text-[2.1vw] font-semibold uppercase md:text-[0.93vw] duration-[400ms] hover:text-white"
+                            href="#">НОВЫЕ
+                            БИЗНЕС-ПРОЦЕССЫ И РЕИНЖЕНИРИНГ</a></li>
+                    <li class="menu-item text-end"><a
+                            class="text-[#A7A7A7]  text-[2.1vw] font-semibold uppercase md:text-[0.93vw] duration-[400ms] hover:text-white"
+                            href="#">ДЛЯ
+                            КОГО</a></li>
+                    <li class="menu-item text-end"><a
+                            class="text-[#A7A7A7]  text-[2.1vw] font-semibold uppercase md:text-[0.93vw] duration-[400ms] hover:text-white"
+                            href="#">КОНТАКТЫ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <button id="menu-open-toggler" class="flex items-center gap-[1vw]">
+            <svg class="w-[3vw] h-[2.6vw] md:w-[1.2vw] md:h-[1vw] relative  " xmlns="http://www.w3.org/2000/svg"
+                width="23" height="22" fill="none" viewBox="0 0 23 22">
+                <path stroke="#fff" stroke-width="2" d="M0 1h16m3 0h4M0 11h23M0 21h23" />
+            </svg>
+            <span
+                class="text-white text-[2.86vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">меню</span>
+        </button>
+        <a href="#" draggable="false">
+            <img class="w-[28.64vw] h-[3.64vw] md:w-[17.7vw] md:h-[2.29vw]" src="./images/logo.svg" alt="Оцифрум"
+                width="340" height="44" draggable="false" loading="lazy" decoding="async">
+        </a>
+        <a href="#"
+            class="text-white text-[2.1vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]">узнайте
+            сейчас</a>
+    </header>
+    <main @scroll.window="onScroll" class="overflow-x-clip">
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[22.13vw] relative md:mt-[8.84vw]">
+            <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] top-[-2vw] right-[-15vw] opacity-15">
+            <h2 class="text-[#3f4b7d] text-[4.68vw] leading-[128%] font-middle uppercase text-center md:text-[2.6vw]">
+                <bdi class="text-[#EE8E15]"> Для кого</bdi> создана система KAIGNER
+            </h2>
+            <div class="grid md:grid-cols-3 gap-y-[6.51vw] md:gap-y-[2.5vw] md:gap-x-[1.56vw] mt-[3.9vw] md:mt-[1vw]">
+                <div>
+                    <picture>
+                        <source srcset="images/for-who.avif" type="image/avif">
+                        <source srcset="images/for-who.webp" type="image/webp">
+                        <img src="images/for-who.jpg" alt="1" width="550" height="359" draggable="false" loading="lazy"
+                            decoding="async" class="object-cover w-full h-[60.15vw] md:h-[18.69vw] rounded-[5px]"
+                            style="background-image: url(images/for-who-low.jpeg);">
+                    </picture>
+                    <span
+                        class="mt-[2vw] md:mt-[0.75vw] font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                        <span>Для тех, кто размышляет <bdi class="text-[#EE8E15]">о правильных и эффективных
+                                бизнес-процессах</bdi>, направляющих компанию к
+                            успеху.</span></span>
+                </div>
+                <div>
+                    <picture>
+                        <source srcset="images/for-who-1.avif" type="image/avif">
+                        <source srcset="images/for-who-1.webp" type="image/webp">
+                        <img src="images/for-who-1.jpg" alt="1" width="550" height="359" draggable="false"
+                            loading="lazy" decoding="async"
+                            class="object-cover w-full h-[60.15vw] md:h-[18.69vw] rounded-[5px]"
+                            style="background-image: url(images/for-who-1-low.jpeg);">
+                    </picture>
+                    <span
+                        class="mt-[2vw] md:mt-[0.75vw] font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                        <span>Для тех, кто хочет <bdi class="text-[#EE8E15]">упаковать свой бизнес в цифровой
+                                формат</bdi> с полным набором ресурсов и продать его за один большой чек.</span></span>
+                </div>
+                <div>
+                    <picture>
+                        <source srcset="images/for-who-2.avif" type="image/avif">
+                        <source srcset="images/for-who-2.webp" type="image/webp">
+                        <img src="images/for-who-2.jpg" alt="1" width="550" height="359" draggable="false"
+                            loading="lazy" decoding="async"
+                            class="object-cover w-full h-[60.15vw] md:h-[18.69vw] rounded-[5px]"
+                            style="background-image: url(images/for-who-2-low.jpeg);">
+                    </picture>
+                    <span
+                        class="mt-[2vw] md:mt-[0.75vw] font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                        <span>Для тех, кто стремится <bdi class="text-[#EE8E15]">извлечь максимум прибыли</bdi> из
+                            своего бизнеса.</span></span>
+                </div>
+                <div>
+                    <picture>
+                        <source srcset="images/for-who-3.avif" type="image/avif">
+                        <source srcset="images/for-who-3.webp" type="image/webp">
+                        <img src="images/for-who-3.jpg" alt="1" width="550" height="359" draggable="false"
+                            loading="lazy" decoding="async"
+                            class="object-cover w-full h-[60.15vw] md:h-[18.69vw] rounded-[5px]"
+                            style="background-image: url(images/for-who-3-low.jpeg);">
+                    </picture>
+                    <span
+                        class="mt-[2vw] md:mt-[0.75vw] font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                        <span>Для тех, кто хочет <bdi class="text-[#EE8E15]">избавиться от постоянного
+                                микроменеджмента</bdi>, конфликтов и необходимости доказывать свою правоту. Создать
+                            единую команду, двигающуюся к целям.</span></span>
+                </div>
+                <div>
+                    <picture>
+                        <source srcset="images/for-who-4.avif" type="image/avif">
+                        <source srcset="images/for-who-4.webp" type="image/webp">
+                        <img src="images/for-who-4.jpg" alt="1" width="550" height="359" draggable="false"
+                            loading="lazy" decoding="async"
+                            class="object-cover w-full h-[60.15vw] md:h-[18.69vw] rounded-[5px]"
+                            style="background-image: url(images/for-who-4-low.jpeg);">
+                    </picture>
+                    <span
+                        class="mt-[2vw] md:mt-[0.75vw] font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                        <span>Для тех, кто хочет <bdi class="text-[#EE8E15]">ввести управленческую систему в
+                                бизнес</bdi>, но беспокоится, что зависти от одного человека. Понимает, что необходим
+                            современный и экспертный реинжиниринг
+                            бизнес-процессов в единую систему.</span></span>
+                </div>
+                <div>
+                    <picture>
+                        <source srcset="images/for-who-5.avif" type="image/avif">
+                        <source srcset="images/for-who-5.webp" type="image/webp">
+                        <img src="images/for-who-5.jpg" alt="1" width="550" height="359" draggable="false"
+                            loading="lazy" decoding="async"
+                            class="object-cover w-full h-[60.15vw] md:h-[18.69vw] rounded-[5px]"
+                            style="background-image: url(images/for-who-5-low.jpeg);">
+                    </picture>
+                    <span
+                        class="mt-[2vw] md:mt-[0.75vw] font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                        <span>Для тех, кто сталкивается <bdi class="text-[#EE8E15]">в разногласиях с партнёром по
+                                бизнесу</bdi>, и осознаёт, что важен конструктивный план действий, совмещённый в единой
+                            карте событий, процессов и целенаправленного
+                            маршрута согласовывающего развитие предприятия по фактическим показателям.</span></span>
+                </div>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[22.13vw] relative md:mt-[8.84vw]">
+            <img src="./images/decor-1.png"
+                class="absolute w-[27.1vw] h-[25vw] bottom-[-7vw] left-[-10vw] opacity-15 -z-10">
+            <h2 class="text-[#3f4b7d] text-[3.9vw] leading-[128%] font-middle uppercase text-center md:text-[2vw]">
+                ИСКЛЮЧАЕМ СОМНЕНИЯ и ИСКОЖЕНИЯ - <bdi class="text-[#EE8E15]">ОТКРЫВАЕМ РОСТ ПО ФАКТАМ</bdi>
+            </h2>
+            <div class="grid md:grid-cols-[57.29vw_auto] gap-[6.51vw] md:gap-[2.6vw] mt-[3.9vw] md:mt-[3vw]">
+                <picture class="order-2 md:order-1">
+                    <source srcset="images/exclude-misunderstanding.avif" type="image/avif">
+                    <source srcset="images/exclude-misunderstanding.webp" type="image/webp">
+                    <img src="images/exclude-misunderstanding.jpg" alt="ОТКРЫВАЕМ РОСТ ПО ФАКТАМ" width="1090"
+                        height="538" draggable="false" loading="lazy" decoding="async"
+                        class="w-full h-[45.44vw] md:h-[28.02vw] rounded-[5px] object-cover"
+                        style="background-image: url(images/exclude-misunderstanding-low.jpeg);">
+                </picture>
+                <div class="order-1 md:order-2">
+                    <h3
+                        class="text-[#3f4b7d] text-[3.9vw] md:text-[2vw] font-medium underline underline-offset-[1.3vw] md:underline-offset-[0.75vw] decoration-[#4d96f2]">
+                        Что мы делаем?</h3>
+                    <ol class="mt-[2vw] md:mt-[0.75vw]">
+                        <li
+                            class="font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            <span><bdi class="text-[#EE8E15]">Настраиваем бизнес-процессы,</bdi> обновляем,
+                                упорядочиваем в
+                                единую систему управления.</span>
+                        </li>
+                    </ol>
+                    <h3
+                        class="mt-[3.9vw] md:mt-[2vw] text-[#3f4b7d] text-[3.9vw] md:text-[2vw] font-medium underline underline-offset-[1.3vw] md:underline-offset-[0.75vw] decoration-[#4d96f2]">
+                        Для чего?</h3>
+                    <ol class="mt-[2vw] md:mt-[0.75vw]">
+                        <li
+                            class="font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            <span>Единая система управления <bdi class="text-[#EE8E15]">объединяет персонал
+                                    компании.</bdi> Мы трансформируем ключевые цифры в видимость: время, даты, ресурсы,
+                                финансовые потоки. Это создает для Вас эффективное
+                                управление своим бизнесом в едином интерфейсе</span>
+                        </li>
+                        <li
+                            class="font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            <span><bdi class="text-[#EE8E15]">"Быстрые конструктивные решения по показателям",</bdi> как
+                                офлайн, так и онлайн из любой точки мира</span>
+                        </li>
+                    </ol>
+                    <h3
+                        class="mt-[3.9vw] md:mt-[2vw] text-[#3f4b7d] text-[3.9vw] md:text-[2vw] font-medium underline underline-offset-[1.3vw] md:underline-offset-[0.75vw] decoration-[#4d96f2]">
+                        Кто это делает?</h3>
+                    <ol class="mt-[2vw] md:mt-[0.75vw]">
+                        <li
+                            class="font-medium text-[#3f4b7d] text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-[#3f4b7d] before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            <span><bdi class="text-[#EE8E15]">Эксперты с практическим опытом</bdi> в промышленных
+                                отраслях. Мы обладаем этими знаниями, опытом и навыками.</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[22.13vw] relative md:mt-[8.84vw]">
+            <img src="./images/decor-1.png"
+                class="absolute w-[27.1vw] h-[25vw] bottom-[-15vw] right-[-10vw] opacity-15 -z-10">
+            <h2 class="text-[#3f4b7d] text-[4.68vw] leading-[128%] font-middle uppercase text-center md:text-[2.6vw]">
+                <bdi class="text-[#EE8E15]">Положительное влияние</bdi> системы KAIGNER на структуру предприятия и
+                финансы
+            </h2>
+            <div
+                class="mt-[3.9vw] md:mt-[1.56vw] w-full rounded-[10px] grid place-items-center py-[1.3vw] md:py-[1vw] text-white text-[3.125vw] md:text-[1.6vw] font-medium bg-gradient-to-t from-[#7382b2] to-[#37446a]">
+                Новые методы управления
+            </div>
+            <div class="grid md:grid-cols-3 gap-[1.3vw] md:gap-[1.82vw] mt-[1.3vw] md:mt-[1vw]">
+                <div
+                    class="bg-[#f3f3f3] rounded-[10px] h-[26vw] md:h-[12.5vw] text-[#3f4b7d] text-[2.6vw] md:text-[1vw] font-medium px-[2.6vw] py-[3.9vw] md:p-[1.3vw]">
+                    Современное предприятие ведет работу в цифровом формате, по системной тактике взаимодействия,
+                    используются мобильные
+                    тех.карты для семейства ваших продуктов
+                </div>
+                <div
+                    class="bg-[#f3f3f3] rounded-[10px] h-[26vw] md:h-[12.5vw] text-[#3f4b7d] text-[2.6vw] md:text-[1vw] font-medium px-[2.6vw] py-[3.9vw] md:p-[1.3vw]">
+                    Все в команде работают с энтузиазмом. Каждый сотрудник понимает, почему и зачем важен его вклад в
+                    общий процесс, так как
+                    есть предыдущее звено - "ОН как сотрудник" - далее следующее звено. Эстафетный подход это и есть
+                    командный дух.
+                </div>
+                <div
+                    class="bg-[#f3f3f3] rounded-[10px] h-[26vw] md:h-[12.5vw] text-[#3f4b7d] text-[2.6vw] md:text-[1vw] font-medium px-[2.6vw] py-[3.9vw] md:p-[1.3vw]">
+                    Ответственность в коллективе растет, результаты каждого члена команды оказывают влияние на общую
+                    ценность предприятия.
+                </div>
+            </div>
+            <svg class="absolute w-[30.98vw] md:w-[25.05vw] h-[13.02vw] md:h-[7.9vw] mt-[2%] md:mt-[1%] left-[3%] md:left-[15%]"
+                width="481" height="153" viewBox="0 0 481 153" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M479.529 148.109C480.057 147.864 480.307 147.282 480.087 146.809L476.512 139.1C476.292 138.627 475.687 138.441 475.159 138.686C474.632 138.931 474.382 139.513 474.602 139.986L477.78 146.839L470.139 150.382C469.612 150.627 469.362 151.209 469.581 151.682C469.801 152.155 470.406 152.34 470.934 152.095L479.529 148.109ZM0.605555 1.91892L478.738 148.171L479.527 146.333L1.39445 0.0810806L0.605555 1.91892Z"
+                    fill="#3F4B7D" />
+            </svg>
+            <svg class="absolute w-[2.08vw] md:w-[0.83vw] h-[13.02vw] md:h-[7.86vw] left-[calc(50%_-_2.08vw)]  md:left-[calc(50%_-_0.83vw)] mt-[2%] md:mt-[1%]"
+                width="16" height="151" viewBox="0 0 16 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7.29289 150.707C7.68341 151.098 8.31657 151.098 8.7071 150.707L15.0711 144.343C15.4616 143.953 15.4616 143.319 15.0711 142.929C14.6805 142.538 14.0474 142.538 13.6568 142.929L7.99999 148.586L2.34314 142.929C1.95261 142.538 1.31945 142.538 0.928925 142.929C0.5384 143.319 0.5384 143.953 0.928925 144.343L7.29289 150.707ZM7 -3.68992e-08L6.99999 150L8.99999 150L9 3.68992e-08L7 -3.68992e-08Z"
+                    fill="#3F4B7D" />
+            </svg>
+            <svg class="absolute w-[30.98vw] md:w-[25.05vw] h-[13.02vw] md:h-[7.9vw] mt-[2%] md:mt-[1%] right-[3%] md:right-[15%]"
+                width="482" height="150" viewBox="0 0 482 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M1.0474 144.022C0.824617 144.495 1.06997 145.078 1.59541 145.326L10.1578 149.367C10.6833 149.615 11.2898 149.433 11.5126 148.961C11.7353 148.489 11.49 147.905 10.9645 147.657L3.35351 144.066L6.58042 137.228C6.80318 136.756 6.55782 136.172 6.03241 135.924C5.50697 135.676 4.90045 135.858 4.67767 136.33L1.0474 144.022ZM480.585 0.0781323L1.61126 143.55L2.38627 145.393L481.36 1.92187L480.585 0.0781323Z"
+                    fill="#3F4B7D" />
+            </svg>
+            <h3
+                class="text-[#3f4b7d] text-[3.125vw] md:text-[1.56vw] font-medium text-center mt-[17.57vw] md:mt-[9.89vw]">
+                Формируется <bdi class="text-[#ee8e15]">дисциплина</bdi></h3>
+            <span class="text-[#3f4b7d] text-[2.34vw] md:text-[1vw] font-medium text-center w-full inline-block">Система
+                предоставляет
+                контрольные данные для оценки эффективности всей цепочки предприятия</span>
+        </section>
+        <section
+            class="mt-[22.13vw] relative md:mt-[8.84vw] bg-gradient-to-t from-[#7382B2] to-[#37446A] py-[6.51vw] md:py-[2.6vw]">
+            <div class="w-[93.48vw] md:w-[88.54vw] mx-auto">
+                <h2 class="text-white text-[3.9vw] leading-[128%] font-middle uppercase text-center md:text-[2vw]">
+                    ПОЯВЛЯЮТСЯ <bdi class="text-[#EE8E15]">РЫЧАГИ</bdi> МАСШТАБИРОВАНИЯ
+                </h2>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="absolute right-[8vw] top-[19%] size-[3.9vw] md:hidden">
+                    <g clip-path="url(#clip0_14_1743)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.8749 2.5C12.2852 2.5 12.6916 2.58083 13.0708 2.73788C13.4499 2.89492 13.7944 3.12511 14.0846 3.41529C14.3748 3.70547 14.6049 4.04997 14.762 4.42911C14.919 4.80826 14.9999 5.21462 14.9999 5.625V11.3812L21.8024 12.1375C23.0251 12.2734 24.1549 12.8555 24.9754 13.7722C25.796 14.6889 26.2497 15.8759 26.2499 17.1063V17.5C26.2499 20.1522 25.1963 22.6957 23.3209 24.5711C21.4456 26.4464 18.902 27.5 16.2499 27.5H15.4074C13.5504 27.4999 11.7301 26.9828 10.1504 26.0065C8.57077 25.0303 7.29415 23.6334 6.46361 21.9725L2.91111 14.8675C2.46111 13.9675 2.79486 12.7638 3.84486 12.3325C5.14736 11.7987 6.38736 11.6988 7.66236 12.3475C8.03361 12.535 8.39361 12.7812 8.74986 13.0775V5.625C8.74986 4.7962 9.0791 4.00134 9.66516 3.41529C10.2512 2.82924 11.0461 2.5 11.8749 2.5ZM11.8749 5C11.7091 5 11.5501 5.06585 11.4329 5.18306C11.3157 5.30027 11.2499 5.45924 11.2499 5.625V16.25C11.25 16.5091 11.1696 16.7618 11.0198 16.9732C10.87 17.1846 10.6583 17.3443 10.4138 17.4301C10.1693 17.5159 9.90421 17.5236 9.65516 17.4521C9.40612 17.3807 9.18542 17.2336 9.02361 17.0312L8.60861 16.5225L8.23111 16.08C7.50611 15.2587 6.97861 14.805 6.53111 14.5763C6.21184 14.4044 5.84158 14.3525 5.48736 14.43L8.69986 20.855C9.32283 22.1005 10.2803 23.148 11.465 23.8801C12.6496 24.6122 14.0147 25 15.4074 25H16.2499C18.239 25 20.1466 24.2098 21.5532 22.8033C22.9597 21.3968 23.7499 19.4891 23.7499 17.5V17.1063C23.7499 16.4908 23.5229 15.897 23.1124 15.4384C22.7018 14.9799 22.1366 14.6889 21.5249 14.6212L14.7236 13.8663C14.1119 13.7986 13.5466 13.5076 13.1361 13.0491C12.7256 12.5905 12.4986 11.9967 12.4986 11.3812V5.625C12.4986 5.45924 12.4328 5.30027 12.3156 5.18306C12.1983 5.06585 12.0394 5 11.8736 5H11.8749ZM7.32486 4.7475C7.40895 4.88878 7.46433 5.04526 7.48785 5.20798C7.51137 5.3707 7.50255 5.53646 7.46192 5.69577C7.42128 5.85507 7.34961 6.0048 7.25102 6.13637C7.15243 6.26794 7.02885 6.37876 6.88736 6.4625C6.28954 6.81603 5.73497 7.23805 5.23486 7.72C5.12236 7.83 5.00986 7.9425 4.90611 8.06125L4.75486 8.24375C4.5587 8.50953 4.26531 8.68686 3.9388 8.73698C3.61229 8.78711 3.27922 8.70595 3.01236 8.51125C2.7471 8.31371 2.56994 8.01997 2.51899 7.69319C2.46803 7.3664 2.54734 7.03267 2.73986 6.76375C2.96624 6.46468 3.21711 6.18497 3.48986 5.9275C4.13137 5.30986 4.84238 4.76875 5.60861 4.315C5.74962 4.23095 5.9058 4.1755 6.06824 4.15181C6.23067 4.12812 6.39619 4.13666 6.55532 4.17694C6.71446 4.21722 6.86411 4.28844 6.99571 4.38656C7.12732 4.48467 7.23832 4.60774 7.32236 4.74875L7.32486 4.7475ZM16.3536 4.2475C16.4861 3.94371 16.7338 3.70497 17.0423 3.58379C17.3508 3.4626 17.6948 3.46888 17.9986 3.60125C19.1516 4.09924 20.2189 4.77588 21.1611 5.60625C21.5561 5.95625 21.9474 6.335 22.2599 6.76375C22.4551 7.03163 22.5359 7.36609 22.4846 7.69356C22.4333 8.02104 22.254 8.31471 21.9861 8.51C21.4736 8.885 20.7724 8.7975 20.3436 8.3575L20.0386 8.00125L19.8636 7.8175L19.6361 7.59625C18.8589 6.88546 17.9683 6.30961 17.0011 5.8925C16.6974 5.76023 16.4586 5.51282 16.3372 5.20461C16.2158 4.89641 16.2217 4.55136 16.3536 4.2475Z"
+                            fill="white" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_14_1743">
+                            <rect width="30" height="30" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div class="overflow-auto">
+                    <div
+                        class="grid grid-cols-6 gap-x-[7.16vw] md:gap-x-[2.86vw] w-[calc(93.48vw_*_3)] md:w-full relative">
+                        <span class="absolute inline-block w-full h-[1.5px] bg-white top-[36%] md:top-[29%]"></span>
+                        <h3
+                            class="text-white align-bottom text-center  text-[4.67vw] md:text-[1.2vw] font-medium inline-flex items-end justify-center">
+                            Маркетинг</h3>
+                        <h3
+                            class="text-white text-center text-[4.67vw] md:text-[1.2vw] font-medium inline-flex items-end justify-center">
+                            Продажи</h3>
+                        <h3
+                            class="text-white text-center text-[4.67vw] md:text-[1.2vw] font-medium inline-flex items-end justify-center">
+                            Деньги</h3>
+                        <h3
+                            class="text-white text-center text-[4.67vw] md:text-[1.2vw] font-medium inline-flex items-end justify-center">
+                            HR</h3>
+                        <h3
+                            class="text-white text-center text-[4.67vw] md:text-[1.2vw] font-medium inline-flex items-end justify-center">
+                            Продукт</h3>
+                        <h3
+                            class="text-white text-center text-[4.67vw] md:text-[1.2vw] font-medium inline-flex items-end justify-center">
+                            Единицы
+                            <br>масштабирования
+                        </h3>
+                        <ul class="grid gap-[1.3vw] md:gap-[0.5vw] mt-[5.2vw] md:mt-[2vw] self-start">
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#edd5a3] leading-none">
+                                Число лидов</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#edd5a3] leading-none">
+                                База</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#edd5a3] leading-none">
+                                Охваты</li>
+                        </ul>
+                        <ul class="grid gap-[1.3vw] md:gap-[0.5vw] mt-[5.2vw] md:mt-[2vw] self-start">
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#c6c9d9] leading-none">
+                                Менеджеры</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#c6c9d9] leading-none">
+                                Руководители&nbsp;групп</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#c6c9d9] leading-none">
+                                Агенты</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#c6c9d9] leading-none">
+                                Дистрибьюторы</li>
+                        </ul>
+                        <ul class="grid gap-[1.3vw] md:gap-[0.5vw] mt-[5.2vw] md:mt-[2vw] self-start">
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#a7b0e1] leading-none">
+                                Оборотные&nbsp;средства</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#a7b0e1] leading-none">
+                                Инвестиции</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#a7b0e1] leading-none">
+                                Деньги на товары</li>
+                        </ul>
+                        <ul class="grid gap-[1.3vw] md:gap-[0.5vw] mt-[5.2vw] md:mt-[2vw] self-start">
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#b5c6db] leading-none">
+                                Найм&nbsp;руководителей</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#b5c6db] leading-none">
+                                Найм продавцов</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#b5c6db] leading-none">
+                                Найм&nbsp;исполнителей</li>
+                        </ul>
+                        <ul class="grid gap-[1.3vw] md:gap-[0.5vw] mt-[5.2vw] md:mt-[2vw] self-start">
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#edd5a3] leading-none">
+                                SCU</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#edd5a3] leading-none">
+                                Бренды</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#edd5a3] leading-none">
+                                Категории</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#edd5a3] leading-none">
+                                Запасы</li>
+                        </ul>
+                        <ul class="grid gap-[1.3vw] md:gap-[0.5vw] mt-[5.2vw] md:mt-[2vw] self-start">
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#c6c9d9] leading-none">
+                                Локации</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#c6c9d9] leading-none">
+                                Офисы</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#c6c9d9] leading-none">
+                                Партнеры</li>
+                            <li
+                                class="text-[#3f4b7d] text-[2.34vw] md:text-[0.86vw] font-medium grid place-items-center px-[3.9vw] md:px-[1.56vw] py-[1.3vw] md:py-[0.5vw] bg-[#c6c9d9] leading-none">
+                                Оборудование</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-[93.48vw] md:w-[88.54vw] mx-auto mt-[22.13vw] relative md:mt-[8.84vw]">
+            <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] bottom-[-5vw] right-[-10vw] opacity-15">
+            <span class="text-[#3f4b7d] text-[2.34vw] md:text-[1.25vw] font-medium">Наши решения для цифровой
+                трансформации.</span>
+            <h2 class="text-[#3f4b7d] text-[4.68vw] leading-[128%] font-middle uppercase md:text-[2.6vw]">
+                Почему <bdi class="text-[#EE8E15]">выбирают</bdi> нас?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-[1.3vw] md:gap-[1vw] mt-[5.2vw] md:mt-[2vw]">
+                <div class="bg-gradient-to-t from-[#7382B2] to-[#37446A] p-[3.9vw] md:p-[1.56vw] rounded-[3px]">
+                    <h3 class="text-white text-[2.86vw] md:text-[1.14vw] font-semibold">Будущее управления
+                        производительностью</h3>
+                    <ol class="mt-[1.3vw] md:mt-[0.5vw]">
+                        <li
+                            class="font-medium text-white text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-white before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            Наше видение управления производительностью - это данные, гибкость, непрерывность и поиск
+                            улучшений.
+                        </li>
+                        <li
+                            class="font-medium text-white text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-white before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            Мы предоставляем платформу данных, которая поддерживает ваши бизнес-цели, улучшая
+                            коммуникацию и сотрудничество, а также
+                            обеспечивая более информативную обратную связь.
+                        </li>
+                    </ol>
+                </div>
+                <div class="bg-gradient-to-t from-[#7382B2] to-[#37446A] p-[3.9vw] md:p-[1.56vw] rounded-[3px]">
+                    <h3 class="text-white text-[2.86vw] md:text-[1.14vw] font-semibold">Влияние систем нового поколения
+                    </h3>
+                    <ol class="mt-[1.3vw] md:mt-[0.5vw]">
+                        <li
+                            class="font-medium text-white text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-white before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            Завтрашний успех в новой эре систем - это о времени, темпе и обратной связи. Взаимосвязь
+                            людей, процессов и технологий
+                            становится ключевой для бизнеса.
+                        </li>
+                        <li
+                            class="font-medium text-white text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-white before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            Наша цифровая платформа управления производительностью делает управление человеческим
+                            ресурсом проще, более доступным и
+                            универсальным.
+                        </li>
+                    </ol>
+                </div>
+                <div class="bg-gradient-to-t from-[#7382B2] to-[#37446A] p-[3.9vw] md:p-[1.56vw] rounded-[3px]">
+                    <h3 class="text-white text-[2.86vw] md:text-[1.14vw] font-semibold">Стратегические советы по
+                        цифровой трансформации</h3>
+                    <ol class="mt-[1.3vw] md:mt-[0.5vw]">
+                        <li
+                            class="font-medium text-white text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-white before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            Помогаем вам внедрить автоматизацию, фокусируясь на стратегиях цифрового развития. Наш
+                            подход ориентирован на бизнес и
+                            направлен на обход начальных трудностей в переходе на новые бизнес-процессы
+                        </li>
+                    </ol>
+                </div>
+                <div class="bg-gradient-to-t from-[#7382B2] to-[#37446A] p-[3.9vw] md:p-[1.56vw] rounded-[3px]">
+                    <h3 class="text-white text-[2.86vw] md:text-[1.14vw] font-semibold">Бизнес успешнее в цифровую эпоху
+                    </h3>
+                    <ol class="mt-[1.3vw] md:mt-[0.5vw]">
+                        <li
+                            class="font-medium text-white text-[2.34vw] md:text-[0.93vw] flex  before:mt-[1.67vw] md:before:mt-[0.46vw] before:content-normal before:block before:bg-white before:flex-shrink-0 before:size-[0.3em] before:mx-[1vw] before:rounded-full">
+                            Не теряйтесь в начале цифровой трансформации - начните с фокуса на бизнес-приоритетах. Наши
+                            эксперты сфокусированы на
+                            ключевых показателях, бизнес-возможностях и эффективном управлении переменами.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#414d75] py-[6.51vw] md:py-[1.56vw] mt-[15.625vw] md:mt-[5.2vw] relative overflow-hidden">
+        <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] bottom-[-12.5vw] right-[-10vw] opacity-15">
+        <img src="./images/decor-1.png" class="absolute w-[27.1vw] h-[25vw] bottom-[-12.5vw] left-[-15vw] opacity-15">
+        <div class="flex justify-between w-[93.48vw] md:w-[88.54vw] mx-auto">
+            <div class="flex flex-col justify-between">
+                <div class="flex flex-col gap-[0.5vw]">
+                    <img src="images/logo.svg" alt="Оцифрум" class="w-[36.71vw] md:w-[17.7vw] h-[4.68vw] md:h-[2.29vw]"
+                        draggable="false" loading="lazy" decoding="async" width="340" height="44">
+                    <p class="text-white text-[1.82vw] md:text-[0.83vw] w-[36.71vw] md:w-[17.7vw] mt-[1.3vw] md:mt-0">
+                        Эксперты, создающие непрерывные бизнес - процессы в современной системе KAIGNER
+                    </p>
+                </div>
+            </div>
+            <div class="hidden md:grid grid-rows-5 grid-flow-col gap-y-[0.5vw] gap-x-[2.5vw]">
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Цели создания
+                    системы KAIGNER</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Получите устойчивые
+                    бизнес-процессы</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Как проходит
+                    проектная работа</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Бизнес станет
+                    привлекательнымг</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Новые
+                    бизнес-процессы и реинжениринг</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Для кого</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Контакты</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Политика
+                    конфиденциальности</a>
+                <a href="#" class="text-white text-[0.94vw] duration-200 hover:text-[hsl(0,0%,70%)]">Связаться с
+                    нами</a>
+            </div>
+            <div>
+                <a href="#"
+                    class="block bg-white text-[2.34vw] md:text-[1vw] rounded-[3px] box-border py-[2.6vw] md:py-[1vw] px-[3.9vw] md:px-[1.25vw] duration-200 hover:bg-[hsl(0,0%,70%)]">УЗНАЙТЕ
+                    СЕЙЧАС</a>
+                <a href="tel:+79129999999"
+                    class="inline-block w-full text-white text-right text-[2.6vw] md:text-[0.94vw] font-medium duration-200 mt-[2.6vw] md:mt-[1.56vw] hover:text-[hsl(0,0%,70%)]">
+                    8 (912) 999 99 99
+                </a>
+            </div>
+        </div>
+        <div
+            class="flex justify-between items-center md:items-end flex-col-reverse md:flex-row w-[93.48vw] md:w-[88.54vw] mx-auto mt-[7.1vw]">
+            <p
+                class="text-white text-[2.1vw] md:text-[0.83vw] w-[93.48vw] md:w-fit text-right md:text-left mt-[6.51vw] md:mt-0">
+                2024г. Все права защищены<br>
+                Информация на сайте не является офертой
+            </p>
+            <div class="grid md:hidden gap-y-[2vw] gap-x-[2.5vw] mt-[13.02vw]">
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Цели
+                    создания
+                    системы KAIGNER</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Получите
+                    устойчивые
+                    бизнес-процессы</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Как
+                    проходит
+                    проектная работа</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Бизнес
+                    станет
+                    привлекательнымг</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Новые
+                    бизнес-процессы и реинжениринг</a>
+                <a href="#" class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Для
+                    кого</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Контакты</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Политика
+                    конфиденциальности</a>
+                <a href="#"
+                    class="text-white text-center text-[2.34vw] duration-200 hover:text-[hsl(0,0%,70%)]">Связаться с
+                    нами</a>
+            </div>
+            <div class="flex justify-end md:justify-normal gap-[2vw] md:gap-[0.78vw] w-[93.48vw] md:w-fit">
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/instagram.svg" class="size-[4.03vw] md:size-[1.56vw]" alt="instagram"
+                        draggable="false" loading="lazy" decoding="async">
+                </a>
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/whatsapp.svg" class="size-[4.03vw] md:size-[1.56vw]" alt="whatsapp"
+                        draggable="false" loading="lazy" decoding="async">
+                </a>
+                <a href="#" target="_blank" draggable="false">
+                    <img src="./images/telegram.svg" class="size-[4.03vw] md:size-[1.56vw]" width="30" height="30"
+                        alt="telegram" draggable="false" loading="lazy" decoding="async">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
