@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="styles.css"/>
         <script src="main.js" defer></script>
     </head>
 
@@ -12,11 +13,12 @@
         <header
             :class="headerIsActive && 'active'"
             x-ref="header"
-            class="py-[2.73vw] mx-[3.9vw] box-border flex justify-between items-center fixed w-[calc(100%_-_7.8vw)] top-0 border-white border-b-[1.5px] z-50 duration-200 md:py-[1.5vw] md:mx-[1.5vw] md:w-[calc(100%_-_3vw)]"
+            class="py-[2.73vw] mx-[3.9vw] box-border flex justify-between items-center fixed w-[calc(100%_-_7.8vw)] top-0 border-white border-b-[1.5px] z-[49] duration-200 md:py-[1.5vw] md:mx-[1.5vw] md:w-[calc(100%_-_3vw)]"
         >
+            <div id="fuck-the-stupid-overlay"></div>
             <div
                 id="menu"
-                class="fixed top-0 left-0 px-[1.87vw] pt-[2.2vw] h-full w-[66.67vw] bg-[rgba(65,77,117,0.9)] flex-col md:w-[33.85vw] hidden box-border"
+                class="fixed top-0 left-0 px-[1.87vw] pt-[2.2vw] h-full w-[66.67vw] bg-[rgba(65,77,117,0.9)] flex-col md:w-[33.85vw] hidden box-border z-[60]"
             >
                 <nav class="min-h-full">
                     <ul
@@ -76,7 +78,7 @@
             </div>
             <button
                 id="menu-open-toggler"
-                class="flex items-center gap-[1vw] relative z-50"
+                class="flex items-center gap-[1vw] relative z-[70]"
             >
                 <svg
                     class="w-[3vw] h-[3vw] md:w-[1vw] md:h-[1vw] absolute"
@@ -174,7 +176,7 @@
                     >закрыть</span
                 >
             </button>
-            <a href="#" draggable="false">
+            <a class="absolute w-full flex justify-center left-0" href="#" draggable="false">
                 <img
                     class="w-[28.64vw] h-[3.64vw] md:w-[17.7vw] md:h-[2.29vw]"
                     src="./images/logo.svg"
@@ -186,10 +188,9 @@
                     decoding="async"
                 />
             </a>
-            <a
-                href="#"
-                class="text-white text-[2.1vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]"
-                >узнайте сейчас</a
+            <button
+                class="z-10 open-popup hover:underline text-white text-[2.1vw] leading-[118%] tracking-[-0.1em] uppercase font-medium md:text-[1.14vw]"
+                >узнайте сейчас</button
             >
         </header>
         <main @scroll.window="onScroll" class="overflow-x-clip">
@@ -197,19 +198,19 @@
                 class="hero-block relative h-[104vw] bg-center bg-cover flex flex-col justify-between md:h-[42vw]"
             >
                 <span
-                    class="absolute text-white text-[2.6vw] font-bold tracking-[-0.1em] z-20 top-[55%] left-[30%] md:top-[65%] md:left-[35%] md:text-[1.35vw]"
+                    class="absolute text-white text-[2.6vw] font-semibold tracking-[-0.1em] z-20 top-[55%] left-[30%] md:top-[65%] md:left-[35%] md:text-[1.35vw]"
                     >+15%</span
                 >
                 <span
-                    class="absolute text-white text-[2.6vw] font-bold tracking-[-0.1em] z-20 top-[22%] left-[39%] md:top-[32%] md:left-[44%] md:text-[1.35vw]"
+                    class="absolute text-white text-[2.6vw] font-semibold tracking-[-0.1em] z-20 top-[22%] left-[39%] md:top-[32%] md:left-[44%] md:text-[1.35vw]"
                     >+35%</span
                 >
                 <span
-                    class="absolute text-white text-[2.6vw] font-bold tracking-[-0.1em] z-20 top-[47%] left-[65%] md:top-[44%] md:left-[57%] md:text-[1.35vw]"
+                    class="absolute text-white text-[2.6vw] font-semibold tracking-[-0.1em] z-20 top-[47%] left-[65%] md:top-[44%] md:left-[57%] md:text-[1.35vw]"
                     >+120%</span
                 >
                 <span
-                    class="absolute text-white text-[2.6vw] font-bold tracking-[-0.1em] z-20 top-[25%] left-[80%] md:top-[40%] md:left-[77%] md:text-[1.35vw]"
+                    class="absolute text-white text-[2.6vw] font-semibold tracking-[-0.1em] z-20 top-[25%] left-[80%] md:top-[40%] md:left-[77%] md:text-[1.35vw]"
                     >+70%</span
                 >
                 <span
@@ -236,33 +237,33 @@
                 <div
                     class="py-[0.65vw] ml-[1vw] border-[#6767B8] border-y-[1.5px] w-full overflow-x-clip relative after:content-normal after:absolute after:block after:h-full after:w-[7.81vw] after:top-0 after:left-0 after:bg-gradient-to-r after:from-white after:to-transparent md:py-[0.5vw]"
                 >
-                    <div class="marquee w-max h-fit flex">
+                    <div class="marquee w-[90%] h-fit">
                         <span
-                            class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]"
+                            class="text-[#3f4b7d] text-[1.82vw] md:text-[1.25vw]"
                             >Отчеты по всем процессам</span
                         >
                         <span
-                            class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]"
+                            class="text-[#3f4b7d] ml-[25px] text-[1.82vw] md:text-[1.25vw]"
                             >Аналитика</span
                         >
                         <span
-                            class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]"
+                            class="text-[#3f4b7d] ml-[25px] text-[1.82vw] md:text-[1.25vw]"
                             >Доп.статусы</span
                         >
                         <span
-                            class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]"
+                            class="text-[#3f4b7d] ml-[25px] text-[1.82vw] md:text-[1.25vw]"
                             >Справочники</span
                         >
                         <span
-                            class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]"
+                            class="text-[#3f4b7d] ml-[25px] text-[1.82vw] md:text-[1.25vw]"
                             >Продажи</span
                         >
                         <span
-                            class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]"
+                            class="text-[#3f4b7d] ml-[25px] text-[1.82vw] md:text-[1.25vw]"
                             >Производство</span
                         >
                         <span
-                            class="text-[#3f4b7d] text-[1.82vw] mr-[3.9vw] md:text-[1.25vw] md:mr-[2.6vw]"
+                            class="text-[#3f4b7d] ml-[25px] text-[1.82vw] md:text-[1.25vw]"
                             >Склад готовой продукции</span
                         >
                     </div>
@@ -587,9 +588,7 @@
                         <p
                             class="text-[#3f4b7d] mt-[2.6vw] text-[2.86vw] md:text-[1.25vw] md:mt-[0.78vw]"
                         >
-                            Бизнес организм, это передвижение по алгоритмам в
-                            системе, информации, обмена данными, использование
-                            ресурсов, взаимодействие людей.
+                            Если в бизнесе один модуль настроен не правильно,   этот дисбаланс будет затормаживать всю систему.   Постепенно разрушая бизнес-модель и вытесняя   её с рынка, отдавая преимущества конкурентам.
                         </p>
                         <img
                             class="w-full mt-[4.68vw]"
@@ -690,7 +689,7 @@
                                 class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw]"
                             >
                                 <b class="font-medium">Вырабатывается</b>
-                                дисциплина
+                                дисциплина.
                             </span>
                         </li>
                         <li
@@ -737,7 +736,7 @@
                 <div
                     class="flex justify-between items-center mt-[2.6vw] md:mt-[1.56vw]"
                 >
-                    <div class="flex items-center gap-[1vw]">
+                    <div class="flex items-end gap-[1vw]">
                         <img
                             src="./images/ticker.png"
                             width="242"
@@ -760,7 +759,7 @@
                         />
                     </div>
                     <p
-                        class="text-[#3f4b7d] text-[1.82vw] md:text-[1.3vw] text-balance font-medium tracking-[0.27vw] text-right w-[40.88vw] md:w-[25.67vw] md:text-center"
+                        class="text-[#3f4b7d] text-[1.82vw] md:text-[1.3vw] text-balance font-medium text-right w-[40.88vw] md:w-[25.67vw] md:text-center"
                     >
                         Целеустремлённый цифровой помощник
                         <b class="font-semibold"
@@ -772,38 +771,38 @@
                     class="grid gap-[1.04vw] md:gap-[1vw] mt-[3.9vw] md:mt-[1.56vw] sm:grid-cols-2 md:grid-cols-4"
                 >
                     <div
-                        class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]"
+                        class="h-[17.44vw] md:h-[6.97vw] solutions-are-developed-btn py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:text-[#3f4b7d]"
                     >
                         Исключает зависимость ошибок от разных отделов
                     </div>
                     <div
-                        class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]"
+                        class="h-[17.44vw] md:h-[6.97vw] solutions-are-developed-btn py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:text-[#3f4b7d]"
                     >
                         Совершенствование процессов «Точно Вовремя»
                     </div>
                     <div
-                        class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]"
+                        class="h-[17.44vw] md:h-[6.97vw] solutions-are-developed-btn py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:text-[#3f4b7d]"
                     >
                         Вывести в видимость все финансовые передвижения
                     </div>
                     <div
-                        class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]"
+                        class="h-[17.44vw] md:h-[6.97vw] solutions-are-developed-btn py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:text-[#3f4b7d]"
                     >
                         Настройка складов, оборот ресурсов, выход готовой
                         продукции
                     </div>
                     <div
-                        class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]"
+                        class="h-[17.44vw] md:h-[6.97vw] solutions-are-developed-btn py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]"
                     >
                         Активация знаменателей продажи и маркетинг GO
                     </div>
                     <div
-                        class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]"
+                        class="h-[17.44vw] md:h-[6.97vw] solutions-are-developed-btn py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d]"
                     >
                         Вывод управления в онлайн, сохраняя безопасность
                     </div>
                     <div
-                        class="h-[17.44vw] md:h-[6.97vw] bg-gradient-to-t from-[#7382b2] to-[#37446a] py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d] sm:col-start-1 sm:col-end-3 md:col-start-3 md:col-end-5"
+                        class="h-[17.44vw] md:h-[6.97vw] solutions-are-developed-btn py-[2.6vw] px-[3.25vw] md:p-[1vw] text-white text-[2.34vw] md:text-[1.14vw] font-medium hover:from-[#9da2bf] hover:to-[#d0d2df] hover:text-[#3f4b7d] sm:col-start-1 sm:col-end-3 md:col-start-3 md:col-end-5"
                     >
                         Создание устойчивых регламентов и повышение
                         производительности сотрудников
@@ -811,7 +810,7 @@
                 </div>
                 <div class="flex justify-end">
                     <a
-                        class="group inline-flex items-center gap-[0.26vw] mt-[2.6vw] md:mt-[1vw] text-[#ffa636] text-[2.1vw] md:text-[0.83vw] font-semibold uppercase border-b border-[#FFA636] pb-[0.15vw]"
+                        class="group inline-flex items-center gap-[0.26vw] mt-[2.6vw] md:mt-[1vw] text-[#ffa636] text-[2.1vw] md:text-[0.83vw] font-semibold uppercase border-b border-[#FFA636] pb-[0.15vw] hover:border-0"
                         href="#"
                         >перейти к целям<svg
                             class="duration-200 size-[1.3vw] md:size-[1vw] group-hover:translate-x-[0.2vw]"
@@ -967,7 +966,7 @@
                 class="relative mt-[13.02vw] md:mt-[2.23vw] min-h-[120vw] md:min-h-[29.8vw] border-y-[2px] border-[#3f4b7d] md:border-none box-border bg-gradient-to-t from-[#9da2bf] to-[#d0d2df] md:bg-transparent md:bg-[url(./images/program-development.png)] bg-cover bg-no-repeat"
             >
                 <a
-                    class="absolute group z-10 right-[4vw] bottom-[-4.5vw] md:right-[5.5vw] md:bottom-auto md:top-0 group inline-flex items-center gap-[0.26vw] text-[#ffa636] text-[2.1vw] md:text-[0.83vw] font-semibold uppercase border-b border-[#FFA636] pb-[0.15vw]"
+                    class="absolute group z-10 right-[4vw] bottom-[-4.5vw] md:right-[5.5vw] md:bottom-auto md:top-0 group inline-flex items-center gap-[0.26vw] text-[#ffa636] text-[2.1vw] md:text-[0.83vw] font-semibold uppercase border-b border-[#FFA636] pb-[0.15vw] hover:border-0"
                     href="#"
                     >перейти к целям<svg
                         class="duration-200 size-[1.3vw] md:size-[1vw] group-hover:translate-x-[0.2vw]"
@@ -1091,7 +1090,7 @@
                     class="text-[#3f4b7d] text-[2.34vw] md:text-[1.14vw] text-center font-medium md:w-[47.55vw] mx-auto mt-[1.3vw] md:mt-[1vw]"
                 >
                     Представьте себе интеллектуальное производство, которое
-                    действительно увеличивает производительность и эффективность
+                    действительно увеличивает производительность и эффeктивность
                     бизнеса, минимизируя риски и сокращая время простоев.
                 </p>
                 <a
@@ -1106,6 +1105,36 @@
                     </svg>
                 </a>
             </section>
+            <div id="popup">
+                <div class="popup">
+                    <img src="./images/decor-1.png" class="absolute w-[24.1vw] h-[23vw] bottom-[2vw] right-[-18vw] opacity-15">
+                    <img src="./images/decor-1.png" class="absolute w-[24.1vw] h-[23vw] top-[-10vw] left-[-15vw] opacity-15">
+                    <button id="close-popup"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="26.8699" height="1.41421" transform="matrix(-0.707107 0.707107 0.707107 0.707107 19.0005 0)" fill="#3F4B7D" />
+                        <rect width="26.8699" height="1.41421" transform="matrix(0.707107 0.707107 0.707107 -0.707107 0 1)" fill="#3F4B7D" />
+                    </svg></button>
+                    <header>
+                        <h2>Заполните форму и мы свяжемся с вами в течение 20 минут</h2>
+                        <span>Время работы с 10:00 до 20:00</span>
+                    </header>
+                    <form>
+                        <input type="text" placeholder="Как Вас зовут?">
+                        <input type="text" placeholder="+7 (999) 999 99 99">
+                        <textarea placeholder="Здесь вы можете оставить комментарий к заявке о вашем направлении бизнеса"></textarea>
+                        <button
+                                type="submit"
+                                class="flex relative group w-fit box-border mx-auto py-[2.6vw] md:py-[1vw] px-[4.55vw] md:px-[1.82vw] bg-gradient-to-t from-[#7382b2] via-50% via-[#37446a] to-[#7382b2] bg-[size:100%_200%] bg-[position:0_100%] duration-500 hover:bg-[position:0_0] rounded-[3px] text-white text-[2.34vw] md:text-[1vw] uppercase font-semibold hover:bg-gradient-to-b"
+                        >
+                            <span class="md:translate-x-[var(--s10px)] md:group-hover:translate-x-[calc(var(--s10px)*(-1))] duration-200">ОСТАВИТЬ ЗАЯВКУ</span>
+                            <svg class="hidden md:inline md:group-hover:translate-x-[var(--s10px)] md:group-hover:opacity-100 duration-200 opacity-0 w-[var(--s15px)] h-[var(--s15px)]" xmlns="http://www.w3.org/2000/svg" width="15" height="16" fill="none" viewBox="0 0 15 16">
+                                <path fill="#fff" d="M14.707 8.707a1 1 0 0 0 0-1.414L8.343.929A1 1 0 0 0 6.93 2.343L12.586 8l-5.657 5.657a1 1 0 1 0 1.414 1.414l6.364-6.364ZM5 9h9V7H5v2Z"/>
+                                <path stroke="#fff" stroke-width="2" d="M0 8h3"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <span>Оставляя свои данные вы соглашаетесь с нашей <a href="#">политикой конфиденциальности</a></span>
+                </div>
+            </div>
         </main>
         <footer
             class="bg-[#414d75] py-[6.51vw] md:py-[1.56vw] mt-[15.625vw] md:mt-[5.2vw] relative overflow-hidden"
@@ -1191,16 +1220,15 @@
                     >
                 </div>
                 <div>
-                    <a
-                        href="#"
-                        class="group flex bg-white text-[2.34vw] md:text-[1vw] rounded-[3px] box-border py-[2.6vw] md:py-[1vw] px-[3.9vw] md:px-[1.25vw] duration-200 hover:bg-[hsl(0,0%,70%)]"
+                    <button
+                        class="open-popup group flex bg-white text-[2.34vw] md:text-[1vw] rounded-[3px] box-border py-[2.6vw] md:py-[1vw] px-[3.9vw] md:px-[1.25vw] duration-200 hover:bg-[hsl(0,0%,70%)]"
                         >
                         <span class="md:translate-x-[var(--s10px)] md:group-hover:translate-x-[calc(var(--s10px)*(-1))] duration-200">УЗНАЙТЕ СЕЙЧАС</span>
                             <svg class="hidden md:inline md:group-hover:translate-x-[var(--s10px)] md:group-hover:opacity-100 duration-200 opacity-0 w-[var(--s15px)] h-[var(--s15px)]" xmlns="http://www.w3.org/2000/svg" width="15" height="16" fill="none" viewBox="0 0 15 16">
                                 <path fill="#3F4B7D" d="M14.707 8.707a1 1 0 0 0 0-1.414L8.343.929A1 1 0 0 0 6.93 2.343L12.586 8l-5.657 5.657a1 1 0 1 0 1.414 1.414l6.364-6.364ZM5 9h9V7H5v2Z"/>
                                 <path stroke="#3F4B7D" stroke-width="2" d="M0 8h3"/>
                             </svg>
-                    </a>
+                    </button>
                     <a
                         href="tel:+79129999999"
                         class="inline-block w-full text-white text-right text-[2.6vw] md:text-[0.94vw] font-medium duration-200 mt-[2.6vw] md:mt-[1.56vw] hover:text-[hsl(0,0%,70%)]"
