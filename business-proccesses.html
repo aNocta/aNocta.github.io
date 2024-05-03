@@ -207,7 +207,16 @@
             <p
                 class="text-center md:text-left mt-[0.65vw] md:mt-[0.78vw] text-white text-[3.9vw] md:text-[1.56vw] z-10 md:w-[51.25vw]">
                 Благодаря системе KAIGNER, все процессы идеально синхронизируются</p>
-            <iframe style="top: -15vw" class="hidden md:block video-hero absolute left-0 w-full aspect-[4/3] pointer-events-none *:object-cover" width="1920" height="1080" src="https://www.youtube.com/embed/XhIFO94zOhE?autoplay=1&mute=1&loop=1&controls=0&playlist=XhIFO94zOhE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe name="bibop" style="top: -15vw" class="hidden md:block video-hero absolute left-0 w-full aspect-[4/3] pointer-events-none *:object-cover" width="1920" height="1080" src="https://www.youtube.com/embed/XhIFO94zOhE?autoplay=1&mute=1&loop=1&controls=0&playlist=XhIFO94zOhE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <script>
+                const bibopInterval = setInterval(() => {
+                    if(!frames['bibop']) return;
+                    const style = document.createElement("style");
+                    style.innerHTML = `video{object-fit:cover;}`;
+                    frames['bibop'].document.head.appendChild(style);
+                    clearInterval(bibopInterval);
+                }, 50);
+            </script>
         </section>
         <p
             class="text-[#3f4b7d] text-[2.34vw] md:text-[1.56vw] text-center font-medium w-[71.22vw] md:[47.86vw] mx-auto mt-[11.71vw] md:mt-[3.64vw]">
